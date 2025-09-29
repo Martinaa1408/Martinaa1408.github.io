@@ -1,39 +1,65 @@
+/* Font moderno da Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
 body {
-  font-family: Arial, sans-serif;
-  margin: 40px auto;
-  max-width: 900px;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
   line-height: 1.6;
-  background: #fafafa;
+  background: linear-gradient(135deg, #f8f9fa, #eaf4f4);
   color: #333;
 }
 
+/* Header */
 header {
   text-align: center;
-  margin-bottom: 40px;
+  padding: 60px 20px 30px;
 }
 
 header h1 {
   margin: 0;
+  font-size: 2.8em;
+  color: #2c3e50;
+}
+
+header h2 {
+  font-weight: 400;
+  color: #555;
+  margin-top: 10px;
+}
+
+/* Navbar */
+nav {
+  margin-top: 20px;
 }
 
 nav a {
   margin: 0 10px;
   text-decoration: none;
-  color: #0366d6;
+  color: #fff;
+  background: #2980b9;
+  padding: 8px 16px;
+  border-radius: 25px;
+  font-weight: 500;
+  transition: all 0.3s ease;
 }
 
 nav a:hover {
-  text-decoration: underline;
+  background: #1c5985;
+  transform: translateY(-2px);
 }
 
-footer {
-  text-align: center;
-  margin-top: 40px;
-  font-size: 0.9em;
-  color: #777;
+/* Sezioni */
+section {
+  background: #fff;
+  margin: 40px auto;
+  padding: 25px 30px;
+  max-width: 800px;
+  border-radius: 15px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
 }
 
-/* --- Gallery style --- */
+/* Galleria */
 .gallery {
   display: flex;
   gap: 20px;
@@ -43,10 +69,18 @@ footer {
 
 .gallery img {
   border-radius: 12px;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
-  transition: transform 0.2s;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.25s;
 }
 
 .gallery img:hover {
-  transform: scale(1.05);
+  transform: scale(1.07);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  margin: 50px 0 20px;
+  font-size: 0.9em;
+  color: #666;
 }

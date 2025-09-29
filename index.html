@@ -1,45 +1,83 @@
-<body>
-  <header>
-    <h1>👩‍💻 Welcome! I am Martina Castellucci</h1>
-    <h2>Master’s student in Bioinformatics @ University of Bologna</h2>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Martina Castellucci – Bioinformatics</title>
 
-    <nav>
-      <a href="#about">ℹ️ About</a>
-      <a href="#cv">📄 CV</a>
-      <a href="#thesis">📚 Thesis</a>
-      <a href="https://github.com/Martinaa1408">🐙 GitHub</a>
-      <a href="https://linkedin.com/in/tuo-username">💼 LinkedIn</a>
-      <a href="https://instagram.com/tuo-username">📸 Instagram</a>
-    </nav>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+
+  <meta property="og:title" content="Martina Castellucci – Bioinformatics" />
+  <meta property="og:description" content="Bioinformatics MSc – University of Bologna. CV, thesis, projects and contacts." />
+  <meta property="og:type" content="website" />
+</head>
+<body>
+  <!-- Header / Navigation -->
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="/">Martina Castellucci</a>
+      <nav>
+        <a href="#about">ℹ️ About</a>
+        <a href="#cv">📄 CV</a>
+        <a href="#thesis">📚 Thesis</a>
+        <a href="https://github.com/Martinaa1408" target="_blank">🐙 GitHub</a>
+        <a href="https://linkedin.com/in/tuo-username" target="_blank">💼 LinkedIn</a>
+        <a href="https://instagram.com/tuo-username" target="_blank">📸 Instagram</a>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <section id="about">
-      <h2>ℹ️ About</h2>
-      <p>
-        I’m Martina Castellucci, a Master’s student in Bioinformatics at the University of Bologna.
-        I’m passionate about genomics, data science, and applied bioinformatics.
-      </p>
-    </section>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1>Hello, I’m Martina 👋</h1>
+      <p>Master’s student in Bioinformatics @ University of Bologna.<br>
+         Passionate about genomics, transcriptomics and computational biology.</p>
+      <div class="buttons">
+        <a class="btn" href="#cv">View CV</a>
+        <a class="btn secondary" href="#thesis">See Thesis</a>
+      </div>
+    </div>
+  </section>
 
-    <section id="cv">
-      <h2>📄 CV</h2>
+  <!-- About Section -->
+  <section id="about" class="about">
+    <div class="container">
+      <h2>ℹ️ About Me</h2>
       <p>
-        You can find my academic and professional CV here:
-        <a href="cv.pdf" target="_blank">Download CV</a>
+        I am a Bioinformatics MSc student with a strong interest in hybrid genome assembly,
+        functional genomics and applied data science. My projects focus on bridging
+        molecular biology with computational approaches.
       </p>
-    </section>
+    </div>
+  </section>
 
-    <section id="thesis">
+  <!-- CV Section -->
+  <section id="cv">
+    <div class="container">
+      <h2>📄 Curriculum Vitae</h2>
+      <p>You can download my CV here:</p>
+      <a class="btn" href="CV.html">Open CV</a>
+    </div>
+  </section>
+
+  <!-- Thesis Section -->
+  <section id="thesis">
+    <div class="container">
       <h2>📚 Thesis</h2>
       <p>
-        My master thesis focuses on computational approaches to genomics and transcriptomics.
-        Soon I will upload details and resources here.
+        My thesis project focuses on multi-omics approaches for fungal genome analysis
+        and polymer degradation pathways. Soon I will share more details here.
       </p>
-    </section>
-  </main>
+    </div>
+  </section>
 
-  <footer>
-    <p>© 2025 Martina Castellucci | Built with 💻 and ☕</p>
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 Martina Castellucci</p>
+    </div>
   </footer>
 </body>
+</html>

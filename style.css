@@ -4,8 +4,9 @@ body {
   margin: 0;
   font-family: 'Inter', sans-serif;
   line-height: 1.6;
-  background: linear-gradient(135deg, #2a003f, #4b0082, #7a3fa0, #b084cc);
-  color: #f0f0f0;
+  background: linear-gradient(135deg, #1e1e2f, #2c2c54);
+  color: #eaeaea;
+  text-align: center;
 }
 
 /* Hero */

@@ -114,16 +114,43 @@ a{text-decoration:none;color:inherit}
   }
   .nav__menu.open{display:flex}
   .dd__menu{position:static;box-shadow:none;border:0;padding:0;min-width:unset}
-}
-.iconbtn svg{
-  width:18px;
-  height:18px;
-  fill:rgba(20,22,32,.85);
+/* --- Brand icons --- */
+.iconbtn{
+  width:42px;
+  height:42px;
+  border-radius:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:white;
+  border:1px solid var(--border);
+  box-shadow:0 10px 30px rgba(20,22,32,.10);
+  transition:transform .15s ease, box-shadow .15s ease;
 }
 
-.iconbtn:hover svg{
-  fill:var(--accent);
+.iconbtn svg{
+  width:22px;
+  height:22px;
 }
+
+/* Brand colors */
+.iconbtn.github svg{ fill:#181717; }      /* GitHub black */
+.iconbtn.linkedin svg{ fill:#0A66C2; }    /* LinkedIn blue */
+.iconbtn.instagram svg{
+  fill:url(#ig-gradient);
+}
+
+/* Hover */
+.iconbtn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 14px 36px rgba(20,22,32,.16);
+}
+
+/* Instagram gradient */
+svg defs{
+  display:none;
+}
+
 
 .hero{padding:40px 0 18px}
 .profile{

@@ -7,18 +7,55 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
   <script defer src="assets/js/main.js"></script>
+
+  <style>
+    .board{ column-count:3; column-gap:16px; }
+    .pin{
+      break-inside:avoid; margin:0 0 16px;
+      border-radius:18px; border:1px solid var(--border);
+      background:rgba(255,255,255,.88); box-shadow:var(--shadow2);
+      overflow:hidden; transition:transform .15s ease;
+    }
+    .pin:hover{ transform:translateY(-2px); }
+    .pin img{ width:100%; display:block; border-bottom:1px solid var(--border); }
+    .pin__body{ padding:12px 14px; }
+    .pin__title{ font-weight:800; margin:0 0 4px; }
+    .pin__meta{ margin:0; color:var(--muted); font-size:14px; line-height:1.35; }
+    @media (max-width:980px){ .board{ column-count:2; } }
+    @media (max-width:620px){ .board{ column-count:1; } }
+  </style>
 </head>
 <body>
 
 <header class="topbar">
   <div class="wrap topbar__inner">
     <a class="brand" href="index.html"><span class="brand__dot"></span><span>Martina Castellucci</span></a>
+
     <nav class="nav">
-      <button class="nav__toggle" id="navToggle">Menu</button>
+      <button class="nav__toggle" id="navToggle" aria-expanded="false">Menu</button>
       <ul class="nav__menu" id="navMenu">
         <li><a class="nav__link" href="index.html">Home</a></li>
+
+        <li class="dd">
+          <button class="dd__btn" type="button">Academia ▾</button>
+          <ul class="dd__menu">
+            <li><a href="master.html">MSc (Bioinformatics)</a></li>
+            <li><a href="thesis.html">MSc Thesis</a></li>
+            <li><a href="bachelor.html">Bachelor (Biotechnology)</a></li>
+          </ul>
+        </li>
+
+        <li class="dd">
+          <button class="dd__btn" type="button">Career ▾</button>
+          <ul class="dd__menu">
+            <li><a href="internship-neotron.html">Internship (Neotron)</a></li>
+            <li><a href="experience.html">Experience</a></li>
+            <li><a href="cv.html">CV</a></li>
+          </ul>
+        </li>
+
         <li><a class="nav__link" href="travel.html">Travel</a></li>
-        <li><a class="nav__link" href="experience.html">Experience</a></li>
+        <li><a class="nav__link" href="about.html">About</a></li>
       </ul>
     </nav>
   </div>
@@ -26,48 +63,83 @@
 
 <main class="hero" style="padding-bottom:0;">
   <div class="wrap">
-    <h1>Travel & <span class="grad">Journey</span></h1>
-    <p class="subtitle">Curated experiences that highlight adaptability, organization and communication.</p>
+    <h1>Travel & <span class="grad">Journeys</span></h1>
+    <p class="subtitle">
+      Selected places that shaped my perspective — curiosity, adaptability and planning.
+    </p>
   </div>
 </main>
 
 <section class="section">
   <div class="wrap">
-    <div class="grid">
-      <div class="col-12 card">
-        <h2>Professional angle</h2>
-        <p>
-          I include this section to highlight transferable skills developed through international experiences:
-          adaptability, planning, independence and cross-cultural communication.
-        </p>
-        <div class="chips">
-          <span class="chip">Adaptability</span>
-          <span class="chip">Organization</span>
-          <span class="chip">Communication</span>
-          <span class="chip">Independence</span>
-        </div>
-      </div>
-
-      <div class="col-6 card">
-        <h2>Highlights</h2>
-        <ul>
-          <li><b>City, Country — Year</b>: 1 line on context + learning outcome</li>
-          <li><b>City, Country — Year</b>: responsibility / teamwork / planning</li>
-          <li><b>City, Country — Year</b>: professional takeaway</li>
-        </ul>
-      </div>
-
-      <div class="col-6 card">
-        <h2>Gallery (optional)</h2>
-        <p>Add 4–8 curated photos in <code>assets/img/</code> and update the paths below.</p>
-        <div class="gallery">
-          <img src="assets/img/IMG_8333.jpg" alt="Travel 1">
-          <img src="assets/img/IMG_9336.JPG" alt="Travel 2">
-          <img src="assets/img/profile.png" alt="Placeholder">
-          <img src="assets/img/profile.png" alt="Placeholder">
-        </div>
+    <div class="card" style="margin-bottom:18px;">
+      <h2 style="margin-top:0;">Highlights</h2>
+      <div class="chips">
+        <span class="chip">International mindset</span>
+        <span class="chip">Curiosity</span>
+        <span class="chip">Adaptability</span>
+        <span class="chip">Planning</span>
       </div>
     </div>
+
+    <div class="board">
+      <article class="pin">
+        <img src="assets/img/amsterdam.jpeg" alt="Amsterdam" loading="lazy">
+        <div class="pin__body">
+          <p class="pin__title">Amsterdam</p>
+          <p class="pin__meta">Exploration • Independence</p>
+        </div>
+      </article>
+
+      <article class="pin">
+        <img src="assets/img/londra.jpeg" alt="London" loading="lazy">
+        <div class="pin__body">
+          <p class="pin__title">London</p>
+          <p class="pin__meta">International environment • Curiosity</p>
+        </div>
+      </article>
+
+      <article class="pin">
+        <img src="assets/img/parigi.jpeg" alt="Paris" loading="lazy">
+        <div class="pin__body">
+          <p class="pin__title">Paris</p>
+          <p class="pin__meta">Culture • Museums • Inspiration</p>
+        </div>
+      </article>
+
+      <article class="pin">
+        <img src="assets/img/roma.jpeg" alt="Rome" loading="lazy">
+        <div class="pin__body">
+          <p class="pin__title">Rome</p>
+          <p class="pin__meta">History • Perspective</p>
+        </div>
+      </article>
+
+      <article class="pin">
+        <img src="assets/img/milano.jpeg" alt="Milan" loading="lazy">
+        <div class="pin__body">
+          <p class="pin__title">Milan</p>
+          <p class="pin__meta">Energy • City life</p>
+        </div>
+      </article>
+
+      <article class="pin">
+        <img src="assets/img/montagna.jpeg" alt="Mountains" loading="lazy">
+        <div class="pin__body">
+          <p class="pin__title">Mountains</p>
+          <p class="pin__meta">Focus • Recharge</p>
+        </div>
+      </article>
+
+      <article class="pin">
+        <img src="assets/img/cervia.jpeg" alt="Cervia" loading="lazy">
+        <div class="pin__body">
+          <p class="pin__title">Cervia</p>
+          <p class="pin__meta">Well-being • Balance</p>
+        </div>
+      </article>
+    </div>
+
     <footer>© <span id="year"></span> Martina Castellucci</footer>
   </div>
 </section>

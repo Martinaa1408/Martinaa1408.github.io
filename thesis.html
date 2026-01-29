@@ -2,14 +2,68 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Bachelor Thesis - Martina Castellucci</title>
-  <link rel="stylesheet" href="style.css">
+  <title>MSc Thesis • Martina Castellucci</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script defer src="assets/js/main.js"></script>
 </head>
 <body>
-  <h1>Bachelor Thesis</h1>
-  <p><strong>Title:</strong> Histological and genetic adaptations of rat skeletal muscle induced in synthetic torpor</p>
-  <p><a href="assets/tesi Martina Castellucci_final.pdf" target="_blank">📄 Read thesis (PDF)</a></p>
-  <p><a href="assets/pdf tesi.pdf" target="_blank">📄 Thesis Discussion Day (PDF)</a></p>
-  <p><a href="index.html">⬅ Back to Home</a></p>
+
+<header class="topbar">
+  <div class="wrap topbar__inner">
+    <a class="brand" href="index.html"><span class="brand__dot"></span><span>Martina Castellucci</span></a>
+    <nav class="nav">
+      <button class="nav__toggle" id="navToggle">Menu</button>
+      <ul class="nav__menu" id="navMenu">
+        <li><a class="nav__link" href="index.html">Home</a></li>
+        <li><a class="nav__link" href="master.html">Master</a></li>
+        <li><a class="nav__link" href="thesis.html">Thesis</a></li>
+        <li><a class="nav__link" href="CV.html">CV</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="hero" style="padding-bottom:0;">
+  <div class="wrap">
+    <h1>MSc <span class="grad">Thesis</span></h1>
+    <p class="subtitle">Topic, goals, methods, and current status.</p>
+
+    <div class="menu">
+      <a class="btn btn--primary" href="assets/thesis.pdf" target="_blank" rel="noopener">Open Thesis (PDF)</a>
+      <a class="btn" href="internship-neotron.html">Internship</a>
+    </div>
+  </div>
+</main>
+
+<section class="section">
+  <div class="wrap">
+    <div class="grid">
+      <div class="col-12 card">
+        <h2>Overview</h2>
+        <p>
+          Thesis topic is being defined within bioinformatics/omics. I’m particularly interested in real datasets,
+          reproducible pipelines and biologically meaningful interpretation.
+        </p>
+        <div class="chips">
+          <span class="chip">Genomics</span>
+          <span class="chip">RNA-seq</span>
+          <span class="chip">Reproducibility</span>
+          <span class="chip">Biological insight</span>
+        </div>
+      </div>
+
+      <div class="col-12 card">
+        <h2>PDF Preview</h2>
+        <iframe title="Thesis PDF" src="assets/thesis.pdf"
+          style="width:100%;height:760px;border:1px solid var(--border);border-radius:14px;background:white;"></iframe>
+      </div>
+    </div>
+
+    <footer>© <span id="year"></span> Martina Castellucci</footer>
+  </div>
+</section>
+
 </body>
 </html>

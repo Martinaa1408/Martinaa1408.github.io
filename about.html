@@ -2,62 +2,96 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>About Me - Martina Castellucci</title>
-  <link rel="stylesheet" href="style.css">
+  <title>About • Martina Castellucci</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script defer src="assets/js/main.js"></script>
 </head>
 <body>
-  <h1>About Me</h1>
-  <p>
-    My name is <strong>Martina Castellucci</strong>, I am currently a 
-    <strong>Master’s student in Bioinformatics</strong> at the University of Bologna.
-    I hold a <strong>Bachelor’s Degree in Biotechnology</strong> (2021–2024), 
-    earned with <em>110/110 cum laude</em> at Alma Mater Studiorum, University of Bologna.
-  </p>
 
-  <h2>🎓 Academic Background</h2>
-  <p>
-    During my undergraduate studies, I developed a strong interdisciplinary foundation in
-    biology, biotechnology, and biomedical sciences. My academic path integrated both
-    theoretical knowledge and practical laboratory training, particularly in molecular and
-    cellular biology, genetics, and bioinformatics.
-  </p>
-  <p>
-    My <strong>bachelor thesis</strong>, entitled 
-    <em>“Histological and genetic adaptations of rat skeletal muscle induced in synthetic torpor”</em>,
-    was carried out at the Department of Biomedical and Neuromotor Sciences, in the laboratory of
-    Physiology led by Prof. Roberto Amici. The project combined <strong>histological analysis</strong>
-    with <strong>transcriptomic profiling (RNA-Seq)</strong> to investigate muscle preservation and
-    gene regulation mechanisms in rats induced into synthetic torpor.
-  </p>
-  <p>
-    This experience allowed me to gain hands-on skills in sample preparation, immunostaining,
-    microscopy, and bioinformatic data analysis of differentially expressed genes.
-  </p>
-
-  <h2>📚 Master’s Studies</h2>
-  <p>
-    Since September 2024, I have been enrolled in the 
-    <strong>International Master’s in Bioinformatics</strong> at the University of Bologna. 
-    The program focuses on the development of computational methods for the analysis and 
-    interpretation of biological data, emphasizing artificial intelligence, statistics, 
-    and computational modeling of complex biological phenomena.
-  </p>
-
-  <h2>🌍 Personal Interests & Goals</h2>
-  <p>
-    I am particularly interested in <strong>computational genomics</strong>, 
-    <strong>transcriptomics</strong>, and the application of bioinformatics 
-    to <strong>biomedical research</strong>. My long-term goal is to contribute 
-    to the development of integrative approaches for understanding biological systems, 
-    bridging experimental and computational sciences.
-  </p>
-
-  <h2>📸 Photos</h2>
-  <div class="gallery">
-    <img src="assets/img/IMG_8333.jpg" alt="Martina Castellucci" width="300">
-    <img src="assets/img/IMG_9336.JPG" alt="Graduation Day" width="300">
+<!-- SAME HEADER AS INDEX -->
+<header class="topbar">
+  <div class="wrap topbar__inner">
+    <a class="brand" href="index.html"><span class="brand__dot"></span><span>Martina Castellucci</span></a>
+    <nav class="nav">
+      <button class="nav__toggle" id="navToggle">Menu</button>
+      <ul class="nav__menu" id="navMenu">
+        <li><a class="nav__link" href="index.html">Home</a></li>
+        <li class="dd">
+          <button class="dd__btn" type="button">Academia ▾</button>
+          <ul class="dd__menu">
+            <li><a href="bachelor.html">Bachelor</a></li>
+            <li><a href="master.html">Master</a></li>
+            <li><a href="thesis.html">MSc Thesis</a></li>
+          </ul>
+        </li>
+        <li class="dd">
+          <button class="dd__btn" type="button">Career ▾</button>
+          <ul class="dd__menu">
+            <li><a href="internship-neotron.html">Internship (Neotron)</a></li>
+            <li><a href="experience.html">Work Experience</a></li>
+            <li><a href="CV.html">CV</a></li>
+          </ul>
+        </li>
+        <li><a class="nav__link" href="travel.html">Travel</a></li>
+        <li><a class="nav__link" href="about.html">About</a></li>
+        <li style="display:flex; gap:8px; margin-left:6px;">
+          <a class="iconbtn" href="YOUR_GITHUB" target="_blank" rel="noopener">GH</a>
+          <a class="iconbtn" href="YOUR_LINKEDIN" target="_blank" rel="noopener">in</a>
+        </li>
+      </ul>
+    </nav>
   </div>
+</header>
 
-  <p><a href="index.html">⬅ Back to Home</a></p>
+<main class="hero" style="padding-bottom:0;">
+  <div class="wrap">
+    <h1>About <span class="grad">me</span></h1>
+    <p class="subtitle">A professional overview of my background and interests.</p>
+  </div>
+</main>
+
+<section class="section">
+  <div class="wrap">
+    <div class="grid">
+      <div class="col-12 card">
+        <h2>Profile</h2>
+        <p>
+          I am a Bioinformatics MSc student at the University of Bologna, interested in genomics,
+          transcriptomics and machine learning for biological data. I enjoy building clean, reproducible
+          workflows and turning raw data into interpretable results (reports, figures and well-documented repositories).
+        </p>
+        <div class="chips">
+          <span class="chip">Genomics</span>
+          <span class="chip">Transcriptomics</span>
+          <span class="chip">Machine learning</span>
+          <span class="chip">Reproducibility</span>
+        </div>
+      </div>
+
+      <div class="col-6 card">
+        <h2>Strengths</h2>
+        <ul>
+          <li>Structured work and documentation (GitHub + README)</li>
+          <li>Quality control and metric-driven analysis</li>
+          <li>Clear communication (reports, slides, figures)</li>
+        </ul>
+      </div>
+
+      <div class="col-6 card">
+        <h2>Interests</h2>
+        <ul>
+          <li>Applied genomics and multi-omics pipelines</li>
+          <li>RNA-seq differential expression and interpretation</li>
+          <li>ML methods for biological classification tasks</li>
+        </ul>
+      </div>
+    </div>
+
+    <footer>© <span id="year"></span> Martina Castellucci</footer>
+  </div>
+</section>
+
 </body>
 </html>

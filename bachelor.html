@@ -13,13 +13,32 @@
 <header class="topbar">
   <div class="wrap topbar__inner">
     <a class="brand" href="index.html"><span class="brand__dot"></span><span>Martina Castellucci</span></a>
+
     <nav class="nav">
-      <button class="nav__toggle" id="navToggle">Menu</button>
+      <button class="nav__toggle" id="navToggle" aria-expanded="false">Menu</button>
       <ul class="nav__menu" id="navMenu">
         <li><a class="nav__link" href="index.html">Home</a></li>
-        <li><a class="nav__link" href="bachelor.html">Bachelor</a></li>
-        <li><a class="nav__link" href="master.html">Master</a></li>
-        <li><a class="nav__link" href="thesis.html">Thesis</a></li>
+
+        <li class="dd">
+          <button class="dd__btn" type="button">Academia ▾</button>
+          <ul class="dd__menu">
+            <li><a href="master.html">MSc (Bioinformatics)</a></li>
+            <li><a href="thesis.html">MSc Thesis</a></li>
+            <li><a href="bachelor.html">Bachelor</a></li>
+          </ul>
+        </li>
+
+        <li class="dd">
+          <button class="dd__btn" type="button">Career ▾</button>
+          <ul class="dd__menu">
+            <li><a href="internship-neotron.html">Internship (Neotron)</a></li>
+            <li><a href="experience.html">Experience</a></li>
+            <li><a href="cv.html">CV</a></li>
+          </ul>
+        </li>
+
+        <li><a class="nav__link" href="travel.html">Travel</a></li>
+        <li><a class="nav__link" href="about.html">About</a></li>
       </ul>
     </nav>
   </div>
@@ -27,24 +46,129 @@
 
 <main class="hero" style="padding-bottom:0;">
   <div class="wrap">
-    <h1>Bachelor</h1>
-    <p class="subtitle">Add your bachelor degree details here (clean and professional).</p>
+    <h1>Bachelor in <span class="grad">Biotechnology</span></h1>
+    <p class="subtitle">
+      University of Bologna — foundations in life sciences, laboratory practice and quantitative thinking.
+    </p>
+
+    <div class="menu" style="justify-content:flex-start; flex-wrap:wrap;">
+      <a class="btn btn--primary" href="master.html">My MSc path</a>
+      <a class="btn" href="experience.html">Experience</a>
+      <a class="btn" href="https://corsi.unibo.it/laurea/Biotecnologie/esplora-il-corso" target="_blank" rel="noopener">
+        Official course page
+      </a>
+    </div>
   </div>
 </main>
 
 <section class="section">
   <div class="wrap">
     <div class="grid">
+
+      <!-- Overview -->
       <div class="col-12 card">
-        <h2>Degree</h2>
-        <ul>
-          <li><b>Program:</b> (Your bachelor program)</li>
-          <li><b>University:</b> (University name)</li>
-          <li><b>Years:</b> (e.g., 20XX–20XX)</li>
-          <li><b>Highlights:</b> (2–3 key courses or skills)</li>
-        </ul>
+        <h2>Program overview</h2>
+        <p>
+          The Bachelor’s program in Biotechnology at the University of Bologna provides an interdisciplinary background
+          across biological systems and applied scientific methodologies.
+          A distinctive component of the program is its strong focus on hands-on laboratory training,
+          including <b>single-bench lab practicals</b> and a <b>mandatory experimental internship</b>.
+        </p>
+
+        <div class="chips">
+          <span class="chip">Life sciences foundations</span>
+          <span class="chip">Lab practice (single-bench)</span>
+          <span class="chip">Quantitative methods</span>
+          <span class="chip">Experimental internship</span>
+        </div>
       </div>
+
+      <!-- Visual block -->
+      <div class="col-6 card">
+        <h2>Laboratory training</h2>
+        <p class="muted">
+          Practical activities are a core part of the curriculum: executing protocols independently
+          supports method precision, reproducibility and scientific rigor.
+        </p>
+        <div class="gallery" style="margin-top:12px;">
+          <img src="assets/img/laboratorio.jpeg" alt="Laboratory activity" loading="lazy">
+          <img src="assets/img/microscope.JPG" alt="Microscope / laboratory instrumentation" loading="lazy">
+        </div>
+      </div>
+
+      <div class="col-6 card">
+        <h2>Academic environment</h2>
+        <p class="muted">
+          Bologna provides an international academic context, where scientific training is complemented by
+          seminars, teamwork and continuous learning.
+        </p>
+        <div class="gallery" style="margin-top:12px;">
+          <img src="assets/img/bologna.jpeg" alt="Bologna – academic environment" loading="lazy">
+          <img src="assets/img/navile.jpeg" alt="Bologna – Navile area" loading="lazy">
+        </div>
+      </div>
+
+      <!-- Coursework anchors (without inventing your personal list) -->
+      <div class="col-12 card">
+        <h2>Coursework & laboratories (high-level)</h2>
+        <p>
+          Core topics include chemistry and biochemistry foundations, cellular and molecular biology,
+          quantitative methods, and laboratory modules designed to build confidence with experimental workflows.
+        </p>
+        <p class="muted">
+          For the official and updated list of courses/labs, see the University of Bologna curriculum pages
+          (program overview and study plan).
+        </p>
+
+        <div class="menu" style="justify-content:flex-start; flex-wrap:wrap;">
+          <a class="btn" href="https://corsi.unibo.it/laurea/Biotecnologie" target="_blank" rel="noopener">
+            Program page (Unibo)
+          </a>
+          <a class="btn" href="https://corsi.unibo.it/laurea/Biotecnologie/insegnamenti/piano/2024/5976/000/000/2023" target="_blank" rel="noopener">
+            Study plan (example)
+          </a>
+        </div>
+      </div>
+
+      <!-- Internship / thesis placeholder -->
+      <div class="col-12 card">
+        <h2>Bachelor internship & thesis</h2>
+        <p>
+          The program includes an experimental internship, supporting the transition from taught labs
+          to real-world experimental practice.
+        </p>
+
+        <div class="grid" style="margin-top:10px;">
+          <div class="col-6">
+            <h3 style="margin-top:0;">Internship</h3>
+            <p class="muted">
+              (Add: host lab/department, topic, main techniques, and outcome — 4–6 bullet points.)
+            </p>
+            <ul style="margin:0; padding-left:18px;">
+              <li>Host / lab: …</li>
+              <li>Focus: …</li>
+              <li>Techniques: …</li>
+              <li>Output: …</li>
+            </ul>
+          </div>
+
+          <div class="col-6">
+            <h3 style="margin-top:0;">Thesis</h3>
+            <p class="muted">
+              (Add: title + 3 lines on the question, methods, and results. If you upload the thesis PDF,
+              I’ll add a “Preview” button like we did for the MSc thesis.)
+            </p>
+            <ul style="margin:0; padding-left:18px;">
+              <li><b>Title:</b> …</li>
+              <li><b>Methods:</b> …</li>
+              <li><b>Outcome:</b> …</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
     </div>
+
     <footer>© <span id="year"></span> Martina Castellucci</footer>
   </div>
 </section>

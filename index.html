@@ -1,684 +1,80 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Martina Castellucci • Bioinformatics</title>
-  <meta name="description" content="Martina Castellucci — Bioinformatics MSc student at the University of Bologna. Genomics, transcriptomics, and ML projects." />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-
-  <style>
-    :root{
-      --bg:#0b0f14;
-      --panel: rgba(255,255,255,.06);
-      --panel2: rgba(255,255,255,.10);
-      --text: rgba(255,255,255,.92);
-      --muted: rgba(255,255,255,.70);
-      --border: rgba(255,255,255,.12);
-      --shadow: 0 18px 60px rgba(0,0,0,.45);
-      --radius: 18px;
-      --maxw: 980px;
-      --accent:#6ee7ff;
-      --accent2:#a78bfa;
-    }
-
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;
-      color:var(--text);
-      background:
-        radial-gradient(1200px 600px at 20% 10%, rgba(110,231,255,.12), transparent 60%),
-        radial-gradient(900px 500px at 80% 30%, rgba(167,139,250,.12), transparent 55%),
-        var(--bg);
-      text-align:center;
-    }
-
-    .wrap{width:min(var(--maxw), calc(100% - 40px)); margin:0 auto;}
-    a{color:inherit; text-decoration:none}
-
-    /* Top nav */
-    .topbar{
-      position:sticky; top:0; z-index:50;
-      background: rgba(11,15,20,.55);
-      border-bottom:1px solid rgba(255,255,255,.08);
-      backdrop-filter: blur(12px);
-    }
-    .topbar__inner{
-      display:flex; align-items:center; justify-content:space-between;
-      padding:12px 0;
-    }
-    .brand{display:flex; align-items:center; gap:10px; font-weight:800}
-    .brand__dot{
-      width:10px; height:10px; border-radius:999px;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-    }
-
-    .nav{display:flex; align-items:center; gap:10px;}
-    .nav__toggle{
-      display:none;
-      padding:10px 12px;
-      border-radius:12px;
-      border:1px solid var(--border);
-      background: rgba(255,255,255,.04);
-      color:var(--text);
-      cursor:pointer;
-    }
-    .nav__menu{
-      list-style:none;
-      display:flex; align-items:center; gap:10px;
-      margin:0; padding:0;
-    }
-
-    .nav__link, .dd__btn{
-      display:inline-flex; align-items:center; gap:8px;
-      padding:10px 12px;
-      border-radius:12px;
-      border:1px solid transparent;
-      background: transparent;
-      color: var(--text);
-      cursor:pointer;
-      font-weight:600;
-    }
-    .nav__link:hover, .dd__btn:hover{
-      background: rgba(255,255,255,.05);
-      border-color: rgba(255,255,255,.08);
-    }
-
-    .dd{position:relative;}
-    .dd__menu{
-      position:absolute; top:44px; right:0;
-      display:none;
-      min-width: 220px;
-      padding:8px;
-      list-style:none; margin:0;
-      background: rgba(15,20,28,.92);
-      border:1px solid rgba(255,255,255,.12);
-      border-radius: 14px;
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(12px);
-      text-align:left;
-    }
-    .dd.open .dd__menu{display:block}
-    .dd__menu a{
-      display:block;
-      padding:10px 10px;
-      border-radius:12px;
-      color: var(--text);
-    }
-    .dd__menu a:hover{background: rgba(255,255,255,.06)}
-    .iconbtn{
-      width:40px; height:40px; border-radius:12px;
-      display:inline-flex; align-items:center; justify-content:center;
-      background: var(--panel);
-      border:1px solid var(--border);
-      box-shadow: 0 10px 30px rgba(0,0,0,.25);
-    }
-    .iconbtn:hover{background: var(--panel2);}
-
-    /* Mobile */
-    @media (max-width: 860px){
-      .nav__toggle{display:inline-flex;}
-      .nav__menu{
-        position:absolute;
-        right:20px;
-        top:60px;
-        width:min(340px, calc(100% - 40px));
-        flex-direction:column;
-        align-items:stretch;
-        padding:10px;
-        background: rgba(15,20,28,.92);
-        border:1px solid rgba(255,255,255,.12);
-        border-radius: 16px;
-        display:none;
-      }
-      .nav__menu.open{display:flex}
-      .dd__menu{position:static; min-width:unset; box-shadow:none; background:transparent; border:0; padding:0; display:none;}
-      .dd.open .dd__menu{display:block}
-      .dd__menu a{padding:10px 12px}
-    }
-
-    /* Hero similar to your current style */
-    .hero{padding:40px 0 18px;}
-    .profile-wrap{
-      display:flex;
-      justify-content:center;
-      margin-bottom:18px;
-    }
-    .profile{
-      width: 360px;
-      max-width: 92vw;
-      border-radius: 16px;
-      border: 1px solid rgba(255,255,255,.12);
-      box-shadow: var(--shadow);
-      overflow:hidden;
-      background: rgba(255,255,255,.03);
-    }
-    .profile img{
-      width:100%;
-      height:auto;
-      display:block;
-    }
-
-    h1{
-      margin: 8px 0 10px;
-      font-size: clamp(28px, 3.8vw, 46px);
-      letter-spacing:-.02em;
-    }
-    .grad{
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      -webkit-background-clip:text;
-      background-clip:text;
-      color:transparent;
-    }
-    .subtitle{
-      margin:0 auto 18px;
-      max-width: 70ch;
-      color: var(--muted);
-      font-size: 1.05rem;
-    }
-
-    .menu{
-      display:flex;
-      flex-wrap:wrap;
-      gap:12px;
-      justify-content:center;
-      margin: 18px 0 18px;
-      padding: 0 10px;
-    }
-
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      padding: 12px 16px;
-      border-radius: 14px;
-      background: var(--panel);
-      border: 1px solid var(--border);
-      box-shadow: 0 10px 30px rgba(0,0,0,.25);
-      backdrop-filter: blur(10px);
-      color: var(--text);
-      font-weight: 600;
-      transition: transform .12s ease, background .12s ease, border-color .12s ease;
-      cursor:pointer;
-    }
-    .btn:hover{
-      transform: translateY(-2px);
-      background: var(--panel2);
-      border-color: rgba(255,255,255,.18);
-    }
-    .btn--primary{
-      background: linear-gradient(135deg, rgba(110,231,255,.18), rgba(167,139,250,.18));
-      border-color: rgba(110,231,255,.25);
-    }
-
-    /* Sections */
-    .section{padding: 16px 0 30px;}
-    .card{
-      background: var(--panel);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(12px);
-      padding: 18px;
-      text-align:left;
-    }
-    .grid{
-      display:grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: 14px;
-    }
-    .col-6{grid-column: span 6;}
-    .col-12{grid-column: span 12;}
-    @media (max-width: 900px){ .col-6{grid-column: span 12;} }
-
-    h2{
-      margin: 0 0 10px;
-      font-size: 1.35rem;
-      letter-spacing:-.02em;
-      text-align:left;
-    }
-    p{margin: 0 0 10px; color: var(--muted); line-height:1.65;}
-    ul{margin: 10px 0 0; padding-left: 18px; color: var(--muted); line-height:1.65;}
-    .chips{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px;}
-    .chip{
-      padding: 7px 10px;
-      border-radius:999px;
-      background: rgba(255,255,255,.04);
-      border: 1px solid rgba(255,255,255,.10);
-      color: var(--muted);
-      font-size: .92rem;
-      white-space: nowrap;
-    }
-    .muted{color: var(--muted);}
-
-    /* Projects */
-    .project-top{display:flex; align-items:center; justify-content:space-between; gap:10px;}
-    .pill{
-      display:inline-flex; align-items:center;
-      padding: 7px 10px;
-      border-radius: 999px;
-      background: rgba(110,231,255,.10);
-      border: 1px solid rgba(110,231,255,.18);
-      font-size: .9rem;
-    }
-    .actions{display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;}
-
-    /* Gallery */
-    .gallery{
-      display:grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
-    }
-    .gallery img{
-      width:100%;
-      height: 170px;
-      object-fit: cover;
-      border-radius: 16px;
-      border: 1px solid rgba(255,255,255,.12);
-      box-shadow: 0 12px 40px rgba(0,0,0,.35);
-      background: rgba(255,255,255,.03);
-    }
-    @media (max-width: 900px){ .gallery{grid-template-columns: repeat(2, 1fr);} }
-    @media (max-width: 520px){ .gallery{grid-template-columns: 1fr;} }
-
-    /* Modal */
-    .modal{position:fixed; inset:0; display:none; z-index:100;}
-    .modal.open{display:block;}
-    .modal__bg{position:absolute; inset:0; background: rgba(0,0,0,.55);}
-    .modal__panel{
-      position:relative;
-      width: min(760px, calc(100% - 28px));
-      margin: 10vh auto;
-      background: rgba(15,20,28,.92);
-      border:1px solid rgba(255,255,255,.12);
-      border-radius: 22px;
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(14px);
-      overflow:hidden;
-      text-align:left;
-    }
-    .modal__hd{
-      display:flex; justify-content:space-between; gap:12px;
-      padding: 16px;
-      border-bottom: 1px solid rgba(255,255,255,.08);
-    }
-    .modal__bd{padding: 14px 16px; color: var(--muted); line-height:1.7;}
-    .modal__ft{
-      padding: 14px 16px 16px;
-      border-top: 1px solid rgba(255,255,255,.08);
-      display:flex; gap:10px; justify-content:flex-end; flex-wrap:wrap;
-    }
-    .xbtn{
-      width:40px; height:40px; border-radius:12px;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.06);
-      color: var(--text);
-      cursor:pointer;
-    }
-    .xbtn:hover{background: rgba(255,255,255,.10);}
-
-    footer{padding: 24px 0 30px; color: rgba(255,255,255,.55); font-size:.95rem;}
-    .anchor{scroll-margin-top: 90px;}
-  </style>
+<meta charset="utf-8">
+<title>Martina Castellucci</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<script defer src="assets/js/main.js"></script>
 </head>
 
 <body>
-  <header class="topbar">
-    <div class="wrap topbar__inner">
-      <a class="brand" href="#top">
-        <span class="brand__dot"></span>
-        <span>Martina Castellucci</span>
-      </a>
+<header class="topbar">
+<div class="wrap topbar__inner">
+<a class="brand" href="index.html"><span class="brand__dot"></span>Martina Castellucci</a>
 
-      <nav class="nav" aria-label="Main navigation">
-        <button class="nav__toggle" id="navToggle" aria-expanded="false">Menu</button>
+<nav class="nav">
+<button class="nav__toggle" id="navToggle">Menu</button>
+<ul class="nav__menu" id="navMenu">
 
-        <ul class="nav__menu" id="navMenu">
-          <li><a class="nav__link" href="#about">About</a></li>
-          <li><a class="nav__link" href="#skills">Skills</a></li>
+<li><a class="nav__link" href="index.html">Home</a></li>
 
-          <li class="dd" id="ddPortfolio">
-            <button class="dd__btn" type="button">Portfolio ▾</button>
-            <ul class="dd__menu">
-              <li><a href="#projects">Projects</a></li>
-              <li><a href="#gallery">Gallery</a></li>
-              <li><a href="#places">Places</a></li>
-            </ul>
-          </li>
+<li class="dd">
+<button class="dd__btn">Academia ▾</button>
+<ul class="dd__menu">
+<li><a href="pages/bachelor.html">Bachelor</a></li>
+<li><a href="pages/master.html">Master</a></li>
+<li><a href="pages/thesis.html">MSc Thesis</a></li>
+</ul>
+</li>
 
-          <li class="dd" id="ddAcademic">
-            <button class="dd__btn" type="button">Academia ▾</button>
-            <ul class="dd__menu">
-              <li><a href="#thesis">MSc Thesis</a></li>
-              <li><a href="#internship">Internship</a></li>
-            </ul>
-          </li>
+<li class="dd">
+<button class="dd__btn">Career ▾</button>
+<ul class="dd__menu">
+<li><a href="pages/internship-neotron.html">Internship (Neotron)</a></li>
+<li><a href="pages/experience.html">Work Experience</a></li>
+<li><a href="pages/cv.html">CV</a></li>
+</ul>
+</li>
 
-          <li><a class="nav__link" href="#contact">Contact</a></li>
+<li><a class="nav__link" href="pages/travel.html">Travel</a></li>
 
-          <li style="display:flex; gap:8px; margin-left:6px;">
-            <a class="iconbtn" href="YOUR_GITHUB" target="_blank" rel="noopener" aria-label="GitHub">GH</a>
-            <a class="iconbtn" href="YOUR_LINKEDIN" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+</ul>
+</nav>
+</div>
+</header>
 
-  <main id="top" class="hero">
-    <div class="wrap">
-      <div class="profile-wrap">
-        <div class="profile">
-          <!-- Put your photo here (keep the same filename you already use, or update the path) -->
-          <img src="assets/profile.png" alt="Martina Castellucci" />
-        </div>
-      </div>
+<main class="hero">
+<div class="wrap">
+<div class="profile">
+<img src="assets/profile.png" alt="Martina Castellucci">
+</div>
 
-      <h1>👋 Welcome, I'm <span class="grad">Martina Castellucci</span></h1>
-      <p class="subtitle">Bioinformatics MSc student @ University of Bologna</p>
+<h1>Hi, I'm <span class="grad">Martina Castellucci</span></h1>
+<p class="subtitle">Bioinformatics MSc student @ University of Bologna</p>
 
-      <!-- Keep your button row vibe, but more consistent -->
-      <div class="menu">
-        <a class="btn" href="#about">About</a>
-        <a class="btn" href="#projects">Projects</a>
-        <a class="btn" href="#skills">Skills</a>
-        <a class="btn" href="#contact">Contact</a>
-        <a class="btn btn--primary" href="YOUR_GITHUB" target="_blank" rel="noopener">GitHub</a>
-      </div>
-    </div>
-  </main>
+<div class="menu">
+<a class="btn" href="pages/cv.html">CV</a>
+<a class="btn" href="pages/experience.html">Experience</a>
+<a class="btn btn--primary" href="pages/thesis.html">MSc Thesis</a>
+</div>
+</div>
+</main>
 
-  <section id="about" class="section anchor">
-    <div class="wrap">
-      <div class="grid">
-        <div class="col-12 card">
-          <h2>About</h2>
-          <p>
-            I'm a Bioinformatics MSc student at the <b>University of Bologna</b>, interested in
-            <b>genomics</b>, <b>transcriptomics</b>, and <b>machine learning</b> for biological data.
-            I like building clean, reproducible workflows and turning raw data into interpretable results
-            (reports, figures, well-documented repositories).
-          </p>
-          <div class="chips">
-            <span class="chip">Genomics</span>
-            <span class="chip">RNA-seq / DEGs</span>
-            <span class="chip">Hybrid assembly</span>
-            <span class="chip">Functional annotation</span>
-            <span class="chip">Python • R • Git</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="projects" class="section anchor">
-    <div class="wrap">
-      <div class="grid">
-        <div class="col-6 card">
-          <div class="project-top">
-            <span class="pill">Machine Learning</span>
-            <span class="muted">AML-BASIC</span>
-          </div>
-          <h2 style="margin-top:10px;">Yeast Protein Subcellular Localization</h2>
-          <p>
-            ML pipeline for subcellular localization classification: preprocessing, feature engineering,
-            model comparison and evaluation.
-          </p>
-          <div class="actions">
-            <button class="btn btn--primary" data-modal="ml">Details</button>
-            <a class="btn" href="YOUR_GITHUB" target="_blank" rel="noopener">Repo</a>
-          </div>
-        </div>
-
-        <div class="col-6 card">
-          <div class="project-top">
-            <span class="pill">Multi-omics</span>
-            <span class="muted">Applied Genomics</span>
-          </div>
-          <h2 style="margin-top:10px;">PLA-C1 • Hybrid assembly + annotation + RNA-seq</h2>
-          <p>
-            Multi-omics analysis on a compost fungal isolate (PLA context):
-            hybrid sequencing, genome assembly, annotation and transcriptomics to identify genes related to biopolymer degradation.
-          </p>
-          <div class="actions">
-            <button class="btn btn--primary" data-modal="omics">Details</button>
-            <a class="btn" href="YOUR_GITHUB" target="_blank" rel="noopener">Repo</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="skills" class="section anchor">
-    <div class="wrap">
-      <div class="grid">
-        <div class="col-6 card">
-          <h2>Skills</h2>
-          <ul>
-            <li><b>Bioinformatics</b>: QC, RNA-seq, differential expression (DEGs), reporting</li>
-            <li><b>Genomics</b>: hybrid assembly, completeness assessment (e.g., BUSCO), annotation, functional analysis</li>
-            <li><b>Data/Dev</b>: Python, R, Linux, Git/GitHub, reproducible workflows</li>
-          </ul>
-        </div>
-
-        <div class="col-6 card">
-          <h2>Highlights</h2>
-          <ul>
-            <li>📍 UniBo • MSc Bioinformatics</li>
-            <li>🧬 Applied Genomics • Multi-omics workflow</li>
-            <li>🤖 ML for bioinformatics</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="gallery" class="section anchor">
-    <div class="wrap">
-      <div class="grid">
-        <div class="col-12 card">
-          <h2>Gallery</h2>
-          <p>Add screenshots of figures (BUSCO plots, DEG heatmaps, pipeline diagrams, posters, etc.).</p>
-          <div class="gallery">
-            <img src="assets/gallery/g1.jpg" alt="Gallery 1" loading="lazy">
-            <img src="assets/gallery/g2.jpg" alt="Gallery 2" loading="lazy">
-            <img src="assets/gallery/g3.jpg" alt="Gallery 3" loading="lazy">
-            <img src="assets/gallery/g4.jpg" alt="Gallery 4" loading="lazy">
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="places" class="section anchor">
-    <div class="wrap">
-      <div class="grid">
-        <div class="col-12 card">
-          <h2>Places</h2>
-          <p><b>Based in:</b> Bologna, Italy — University of Bologna.</p>
-          <p><b>Open to:</b> MSc thesis / internship / collaborations in genomics, transcriptomics, and ML-driven bioinformatics.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="thesis" class="section anchor">
-    <div class="wrap">
-      <div class="grid">
-        <div class="col-12 card">
-          <h2>MSc Thesis</h2>
-          <p>
-            Thesis topic is currently being defined within the bioinformatics/omics area.
-            I'm particularly interested in real datasets, reproducible pipelines, and biologically meaningful interpretation.
-          </p>
-          <div class="chips">
-            <span class="chip">Genomics</span>
-            <span class="chip">RNA-seq</span>
-            <span class="chip">Reproducibility</span>
-            <span class="chip">Biological insight</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="internship" class="section anchor">
-    <div class="wrap">
-      <div class="grid">
-        <div class="col-12 card">
-          <h2>Internship</h2>
-          <ul>
-            <li><b>Looking for:</b> genomics/transcriptomics projects with clear objectives and real data</li>
-            <li><b>I can offer:</b> clean analysis, QC & metrics, clear reporting, organized repos (GitHub + README)</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" class="section anchor">
-    <div class="wrap">
-      <div class="grid">
-        <div class="col-12 card">
-          <h2>Contact</h2>
-          <p><b>Email:</b> YOUR_EMAIL</p>
-          <div class="actions">
-            <a class="btn btn--primary" href="mailto:YOUR_EMAIL">Send email</a>
-            <a class="btn" href="YOUR_GITHUB" target="_blank" rel="noopener">GitHub</a>
-            <a class="btn" href="YOUR_LINKEDIN" target="_blank" rel="noopener">LinkedIn</a>
-          </div>
-        </div>
-      </div>
-
-      <footer>© <span id="year"></span> Martina Castellucci</footer>
-    </div>
-  </section>
-
-  <!-- Modal -->
-  <div class="modal" id="modal" aria-hidden="true">
-    <div class="modal__bg" id="modalBg"></div>
-    <div class="modal__panel" role="dialog" aria-modal="true">
-      <div class="modal__hd">
-        <div>
-          <div class="pill" id="mTag">Project</div>
-          <div style="font-weight:800; font-size:1.15rem; margin-top:8px;" id="mTitle">Title</div>
-          <div class="muted" id="mMeta" style="margin-top:4px;">Meta</div>
-        </div>
-        <button class="xbtn" id="modalX" aria-label="Close">✕</button>
-      </div>
-      <div class="modal__bd" id="mBody"></div>
-      <div class="modal__ft">
-        <button class="btn" id="modalClose">Close</button>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    // year
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    // mobile menu
-    const navToggle = document.getElementById("navToggle");
-    const navMenu = document.getElementById("navMenu");
-    navToggle?.addEventListener("click", () => {
-      const open = navMenu.classList.toggle("open");
-      navToggle.setAttribute("aria-expanded", open ? "true" : "false");
-    });
-
-    // dropdowns
-    function setupDropdown(id){
-      const dd = document.getElementById(id);
-      const btn = dd?.querySelector(".dd__btn");
-      btn?.addEventListener("click", (e) => {
-        e.stopPropagation();
-        dd.classList.toggle("open");
-      });
-    }
-    setupDropdown("ddPortfolio");
-    setupDropdown("ddAcademic");
-    document.addEventListener("click", () => {
-      document.querySelectorAll(".dd.open").forEach(x => x.classList.remove("open"));
-    });
-
-    // close mobile menu on anchor click
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-      a.addEventListener("click", () => navMenu?.classList.remove("open"));
-    });
-
-    // modal data
-    const data = {
-      ml: {
-        tag: "Machine Learning • AML-BASIC",
-        title: "Yeast Protein Subcellular Localization",
-        meta: "University of Bologna • ML pipeline",
-        body: `
-          <ul>
-            <li><b>Goal:</b> classify yeast protein subcellular localization.</li>
-            <li><b>Pipeline:</b> preprocessing → feature engineering → modelling → validation.</li>
-            <li><b>Focus:</b> model comparison, metrics, and interpretation.</li>
-          </ul>
-          <p style="margin-top:10px;">
-            If you want, we can add a short “impact” line with your best metric (e.g., F1/accuracy) once you provide it.
-          </p>
-        `
-      },
-      omics: {
-        tag: "Multi-omics • Applied Genomics",
-        title: "PLA-C1 • Hybrid assembly + annotation + RNA-seq",
-        meta: "Genome assembly + functional annotation + transcriptomics",
-        body: `
-          <ul>
-            <li><b>Genome:</b> hybrid sequencing → assembly → quality assessment (e.g., BUSCO).</li>
-            <li><b>Annotation:</b> gene prediction + functional annotation (incl. CAZy).</li>
-            <li><b>Transcriptomics:</b> RNA-seq → DEGs → biological interpretation.</li>
-          </ul>
-          <p style="margin-top:10px;">
-            This section is perfect to showcase your figures (BUSCO plot, DEG heatmap, CAZy summary).
-          </p>
-        `
-      }
-    };
-
-    // modal logic
-    const modal = document.getElementById("modal");
-    const modalBg = document.getElementById("modalBg");
-    const modalX = document.getElementById("modalX");
-    const modalClose = document.getElementById("modalClose");
-    const mTag = document.getElementById("mTag");
-    const mTitle = document.getElementById("mTitle");
-    const mMeta = document.getElementById("mMeta");
-    const mBody = document.getElementById("mBody");
-
-    function openModal(key){
-      const d = data[key];
-      if(!d) return;
-      mTag.textContent = d.tag;
-      mTitle.textContent = d.title;
-      mMeta.textContent = d.meta;
-      mBody.innerHTML = d.body;
-      modal.classList.add("open");
-      document.body.style.overflow = "hidden";
-    }
-    function closeModal(){
-      modal.classList.remove("open");
-      document.body.style.overflow = "";
-    }
-    document.querySelectorAll("[data-modal]").forEach(btn => {
-      btn.addEventListener("click", () => openModal(btn.getAttribute("data-modal")));
-    });
-    modalBg?.addEventListener("click", closeModal);
-    modalX?.addEventListener("click", closeModal);
-    modalClose?.addEventListener("click", closeModal);
-    document.addEventListener("keydown", (e) => {
-      if(e.key === "Escape" && modal.classList.contains("open")) closeModal();
-    });
-  </script>
+<section class="section">
+<div class="wrap">
+<div class="grid">
+<div class="col-12 card">
+<h2>About</h2>
+<p>
+Bioinformatics MSc student focused on genomics, transcriptomics and machine learning.
+I value clean, reproducible workflows and clear scientific communication.
+</p>
+</div>
+</div>
+<footer>© <span id="year"></span></footer>
+</div>
+</section>
 </body>
 </html>
-

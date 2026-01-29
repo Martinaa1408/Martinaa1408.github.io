@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>About • Martina Castellucci</title>
+  <title>CV • Martina Castellucci</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
@@ -10,36 +10,16 @@
 </head>
 <body>
 
-<!-- SAME HEADER AS INDEX -->
 <header class="topbar">
   <div class="wrap topbar__inner">
     <a class="brand" href="index.html"><span class="brand__dot"></span><span>Martina Castellucci</span></a>
     <nav class="nav">
-      <button class="nav__toggle" id="navToggle">Menu</button>
+      <button class="nav__toggle" id="navToggle" aria-expanded="false">Menu</button>
       <ul class="nav__menu" id="navMenu">
         <li><a class="nav__link" href="index.html">Home</a></li>
-        <li class="dd">
-          <button class="dd__btn" type="button">Academia ▾</button>
-          <ul class="dd__menu">
-            <li><a href="bachelor.html">Bachelor</a></li>
-            <li><a href="master.html">Master</a></li>
-            <li><a href="thesis.html">MSc Thesis</a></li>
-          </ul>
-        </li>
-        <li class="dd">
-          <button class="dd__btn" type="button">Career ▾</button>
-          <ul class="dd__menu">
-            <li><a href="internship-neotron.html">Internship (Neotron)</a></li>
-            <li><a href="experience.html">Work Experience</a></li>
-            <li><a href="CV.html">CV</a></li>
-          </ul>
-        </li>
-        <li><a class="nav__link" href="travel.html">Travel</a></li>
-        <li><a class="nav__link" href="about.html">About</a></li>
-        <li style="display:flex; gap:8px; margin-left:6px;">
-          <a class="iconbtn" href="YOUR_GITHUB" target="_blank" rel="noopener">GH</a>
-          <a class="iconbtn" href="YOUR_LINKEDIN" target="_blank" rel="noopener">in</a>
-        </li>
+        <li><a class="nav__link" href="cv.html">CV</a></li>
+        <li><a class="nav__link" href="thesis.html">Thesis</a></li>
+        <li><a class="nav__link" href="experience.html">Experience</a></li>
       </ul>
     </nav>
   </div>
@@ -47,8 +27,14 @@
 
 <main class="hero" style="padding-bottom:0;">
   <div class="wrap">
-    <h1>About <span class="grad">me</span></h1>
-    <p class="subtitle">A professional overview of my background and interests.</p>
+    <h1>Curriculum Vitae</h1>
+    <p class="subtitle">Select a version and preview/download the PDF.</p>
+
+    <div class="menu" style="flex-wrap:wrap;">
+      <button class="btn btn--primary" id="btnITA" type="button">Italian (ITA)</button>
+      <button class="btn" id="btnENG" type="button">English (EU format)</button>
+      <a class="btn" id="btnDL" href="assets/CV-ITA.pdf" target="_blank" rel="noopener">Download</a>
+    </div>
   </div>
 </main>
 
@@ -56,42 +42,49 @@
   <div class="wrap">
     <div class="grid">
       <div class="col-12 card">
-        <h2>Profile</h2>
-        <p>
-          I am a Bioinformatics MSc student at the University of Bologna, interested in genomics,
-          transcriptomics and machine learning for biological data. I enjoy building clean, reproducible
-          workflows and turning raw data into interpretable results (reports, figures and well-documented repositories).
+        <h2>Preview</h2>
+
+        <iframe
+          id="cvFrame"
+          title="CV PDF Preview"
+          src="assets/CV-ITA.pdf"
+          style="width:100%;height:780px;border:1px solid var(--border);border-radius:14px;background:white;">
+        </iframe>
+
+        <p class="muted" style="margin-top:12px;">
+          Tip: if the preview looks blank on mobile, use the “Download” button to open the PDF.
         </p>
-        <div class="chips">
-          <span class="chip">Genomics</span>
-          <span class="chip">Transcriptomics</span>
-          <span class="chip">Machine learning</span>
-          <span class="chip">Reproducibility</span>
-        </div>
-      </div>
-
-      <div class="col-6 card">
-        <h2>Strengths</h2>
-        <ul>
-          <li>Structured work and documentation (GitHub + README)</li>
-          <li>Quality control and metric-driven analysis</li>
-          <li>Clear communication (reports, slides, figures)</li>
-        </ul>
-      </div>
-
-      <div class="col-6 card">
-        <h2>Interests</h2>
-        <ul>
-          <li>Applied genomics and multi-omics pipelines</li>
-          <li>RNA-seq differential expression and interpretation</li>
-          <li>ML methods for biological classification tasks</li>
-        </ul>
       </div>
     </div>
 
     <footer>© <span id="year"></span> Martina Castellucci</footer>
   </div>
 </section>
+
+<script>
+  // Files (ENG has spaces -> encode them)
+  const ITA = "assets/CV-ITA.pdf";
+  const ENG = "assets/European%20version%20CV.pdf";
+
+  const frame = document.getElementById("cvFrame");
+  const btnDL = document.getElementById("btnDL");
+  const btnITA = document.getElementById("btnITA");
+  const btnENG = document.getElementById("btnENG");
+
+  function setCV(which) {
+    const isITA = which === "ita";
+    const file = isITA ? ITA : ENG;
+
+    frame.src = file;
+    btnDL.href = file;
+
+    btnITA.classList.toggle("btn--primary", isITA);
+    btnENG.classList.toggle("btn--primary", !isITA);
+  }
+
+  btnITA.addEventListener("click", () => setCV("ita"));
+  btnENG.addEventListener("click", () => setCV("eng"));
+</script>
 
 </body>
 </html>

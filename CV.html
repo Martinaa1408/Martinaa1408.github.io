@@ -2,13 +2,96 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Curriculum Vitae - Martina Castellucci</title>
-  <link rel="stylesheet" href="style.css">
+  <title>About • Martina Castellucci</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script defer src="assets/js/main.js"></script>
 </head>
 <body>
-  <h1>Curriculum Vitae</h1>
-  <p><a href="assets/CV_Martina_Castellucci.pdf" target="_blank">📄 Download full CV (PDF)</a></p>
-  <iframe src="assets/CV_Martina_Castellucci.pdf" width="100%" height="600px"></iframe>
-  <p><a href="index.html">⬅ Back to Home</a></p>
+
+<!-- SAME HEADER AS INDEX -->
+<header class="topbar">
+  <div class="wrap topbar__inner">
+    <a class="brand" href="index.html"><span class="brand__dot"></span><span>Martina Castellucci</span></a>
+    <nav class="nav">
+      <button class="nav__toggle" id="navToggle">Menu</button>
+      <ul class="nav__menu" id="navMenu">
+        <li><a class="nav__link" href="index.html">Home</a></li>
+        <li class="dd">
+          <button class="dd__btn" type="button">Academia ▾</button>
+          <ul class="dd__menu">
+            <li><a href="bachelor.html">Bachelor</a></li>
+            <li><a href="master.html">Master</a></li>
+            <li><a href="thesis.html">MSc Thesis</a></li>
+          </ul>
+        </li>
+        <li class="dd">
+          <button class="dd__btn" type="button">Career ▾</button>
+          <ul class="dd__menu">
+            <li><a href="internship-neotron.html">Internship (Neotron)</a></li>
+            <li><a href="experience.html">Work Experience</a></li>
+            <li><a href="CV.html">CV</a></li>
+          </ul>
+        </li>
+        <li><a class="nav__link" href="travel.html">Travel</a></li>
+        <li><a class="nav__link" href="about.html">About</a></li>
+        <li style="display:flex; gap:8px; margin-left:6px;">
+          <a class="iconbtn" href="YOUR_GITHUB" target="_blank" rel="noopener">GH</a>
+          <a class="iconbtn" href="YOUR_LINKEDIN" target="_blank" rel="noopener">in</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="hero" style="padding-bottom:0;">
+  <div class="wrap">
+    <h1>About <span class="grad">me</span></h1>
+    <p class="subtitle">A professional overview of my background and interests.</p>
+  </div>
+</main>
+
+<section class="section">
+  <div class="wrap">
+    <div class="grid">
+      <div class="col-12 card">
+        <h2>Profile</h2>
+        <p>
+          I am a Bioinformatics MSc student at the University of Bologna, interested in genomics,
+          transcriptomics and machine learning for biological data. I enjoy building clean, reproducible
+          workflows and turning raw data into interpretable results (reports, figures and well-documented repositories).
+        </p>
+        <div class="chips">
+          <span class="chip">Genomics</span>
+          <span class="chip">Transcriptomics</span>
+          <span class="chip">Machine learning</span>
+          <span class="chip">Reproducibility</span>
+        </div>
+      </div>
+
+      <div class="col-6 card">
+        <h2>Strengths</h2>
+        <ul>
+          <li>Structured work and documentation (GitHub + README)</li>
+          <li>Quality control and metric-driven analysis</li>
+          <li>Clear communication (reports, slides, figures)</li>
+        </ul>
+      </div>
+
+      <div class="col-6 card">
+        <h2>Interests</h2>
+        <ul>
+          <li>Applied genomics and multi-omics pipelines</li>
+          <li>RNA-seq differential expression and interpretation</li>
+          <li>ML methods for biological classification tasks</li>
+        </ul>
+      </div>
+    </div>
+
+    <footer>© <span id="year"></span> Martina Castellucci</footer>
+  </div>
+</section>
+
 </body>
 </html>

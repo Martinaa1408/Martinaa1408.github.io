@@ -13,13 +13,32 @@
 <header class="topbar">
   <div class="wrap topbar__inner">
     <a class="brand" href="index.html"><span class="brand__dot"></span><span>Martina Castellucci</span></a>
+
     <nav class="nav">
-      <button class="nav__toggle" id="navToggle">Menu</button>
+      <button class="nav__toggle" id="navToggle" aria-expanded="false">Menu</button>
       <ul class="nav__menu" id="navMenu">
         <li><a class="nav__link" href="index.html">Home</a></li>
-        <li><a class="nav__link" href="internship-neotron.html">Internship</a></li>
-        <li><a class="nav__link" href="experience.html">Experience</a></li>
-        <li><a class="nav__link" href="CV.html">CV</a></li>
+
+        <li class="dd">
+          <button class="dd__btn" type="button">Academia ▾</button>
+          <ul class="dd__menu">
+            <li><a href="master.html">MSc (Bioinformatics)</a></li>
+            <li><a href="thesis.html">MSc Thesis</a></li>
+            <li><a href="bachelor.html">Bachelor</a></li>
+          </ul>
+        </li>
+
+        <li class="dd">
+          <button class="dd__btn" type="button">Career ▾</button>
+          <ul class="dd__menu">
+            <li><a href="internship-neotron.html">Internship (Neotron)</a></li>
+            <li><a href="experience.html">Experience</a></li>
+            <li><a href="cv.html">CV</a></li>
+          </ul>
+        </li>
+
+        <li><a class="nav__link" href="travel.html">Travel</a></li>
+        <li><a class="nav__link" href="about.html">About</a></li>
       </ul>
     </nav>
   </div>
@@ -27,27 +46,162 @@
 
 <main class="hero" style="padding-bottom:0;">
   <div class="wrap">
-    <h1>Internship <span class="grad">Neotron</span></h1>
-    <p class="subtitle">Professional, concise description of your internship.</p>
+    <div class="grid" style="align-items:center;">
+      <div class="col-6">
+        <h1>Internship <span class="grad">Neotron</span></h1>
+        <p class="subtitle">
+          MSc internship and thesis project: decision support for food contamination risk assessment & prediction.
+        </p>
+
+        <div class="menu" style="justify-content:flex-start; flex-wrap:wrap;">
+          <a class="btn btn--primary" href="thesis.html">Open Thesis PDF</a>
+          <a class="btn" href="cv.html">Open CV</a>
+        </div>
+      </div>
+
+      <div class="col-6">
+        <div class="card" style="display:flex; gap:14px; align-items:center;">
+          <img src="assets/img/logo.jpg" alt="Neotron logo" style="width:72px;height:72px;object-fit:contain;border-radius:16px;background:#fff;border:1px solid var(--border);padding:10px;">
+          <div>
+            <div style="font-weight:800; font-size:18px;">Neotron Laboratory (LMIB Division)</div>
+            <div class="muted">Part of the Cotecna Group</div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </main>
 
 <section class="section">
   <div class="wrap">
     <div class="grid">
+
+      <!-- Neotron overview -->
       <div class="col-12 card">
-        <h2>Overview</h2>
-        <ul>
-          <li><b>Company:</b> Neotron</li>
-          <li><b>Role:</b> (Your role / internship title)</li>
-          <li><b>Focus:</b> (What you do in 1 line)</li>
-          <li><b>Skills:</b> (Tools/skills used)</li>
+        <h2>About Neotron</h2>
+        <p>
+          Neotron is part of the Cotecna Group, operating within testing, inspection and certification services
+          with a strong laboratory network supporting multiple industry sectors.
+        </p>
+
+        <div class="grid" style="margin-top:14px; align-items:stretch;">
+          <div class="col-6">
+            <img src="assets/img/neotron.jpg" alt="Neotron" style="width:100%;border-radius:18px;border:1px solid var(--border);">
+          </div>
+          <div class="col-6">
+            <div class="chips" style="margin-bottom:10px;">
+              <span class="chip">Testing & Analysis</span>
+              <span class="chip">Food & Feed</span>
+              <span class="chip">Pharma</span>
+              <span class="chip">Data-driven labs</span>
+            </div>
+            <p class="muted">
+              The “Where Data meets the Lab” approach highlights the integration between analytical workflows
+              (high-throughput laboratory measurements) and data processing / bioinformatics to support decision-making.
+            </p>
+            <div class="menu" style="justify-content:flex-start; margin-top:12px;">
+              <a class="btn" href="https://www.neotron.it" target="_blank" rel="noopener">neotron.it</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Internship facts -->
+      <div class="col-6 card">
+        <h2>Internship details</h2>
+        <ul style="margin:0; padding-left:18px;">
+          <li><b>Host laboratory:</b> Neotron Laboratory, LMIB Division</li>
+          <li><b>Start date:</b> 02/02/2026</li>
+          <li><b>Scientific supervisor:</b> Leila El Boulami</li>
+          <li><b>Track:</b> MSc Bioinformatics — University of Bologna</li>
         </ul>
-        <p style="margin-top:10px;">
-          (When you give me 2–3 details, I can rewrite this section in perfect “CV-style English”.)
+      </div>
+
+      <div class="col-6 card">
+        <h2>Workspace</h2>
+        <img src="assets/img/office.jpg" alt="Office / lab environment" style="width:100%;border-radius:18px;border:1px solid var(--border);">
+        <p class="muted" style="margin-top:10px;">
+          Lab + data workflows: from analytical measurements to structured datasets, dashboards and predictive models.
         </p>
       </div>
+
+      <!-- Thesis project -->
+      <div class="col-12 card">
+        <h2>Thesis project — overview</h2>
+        <p style="font-weight:800; margin-bottom:6px;">
+          Development of a Decision Support System for the Assessment and Prediction of Food Contamination Risk
+        </p>
+        <p class="muted" style="margin-top:0;">
+          A data-driven framework that combines regulatory limits, historical analytical data, and predictive modelling
+          to support dynamic food safety monitoring.
+        </p>
+
+        <div class="grid" style="margin-top:10px;">
+          <div class="col-6">
+            <h3 style="margin-top:0;">Background</h3>
+            <p class="muted">
+              Food safety monitoring requires integrating analytical, environmental and regulatory data to detect contamination risks
+              across food matrices. Contamination levels can vary seasonally and may be influenced by climatic conditions. The availability
+              of large analytical datasets from Neotron enables computational approaches to improve risk prediction and decision-making.
+            </p>
+          </div>
+
+          <div class="col-6">
+            <h3 style="margin-top:0;">Data</h3>
+            <p class="muted">
+              Neotron’s historical analytical database containing quantitative results across multiple food matrices and contaminant classes
+              (concentrations, sampling dates, and metadata). External signals (e.g., climatic/seasonal indicators) may be integrated.
+              Extraction and preprocessing are performed from structured SQL/CSV sources with confidentiality and data protection constraints.
+            </p>
+          </div>
+
+          <div class="col-6">
+            <h3>Methods</h3>
+            <ul style="margin:0; padding-left:18px;">
+              <li>Data cleaning, transformation and feature selection</li>
+              <li>Non-compliance estimation relative to EU legal limits</li>
+              <li>Temporal / seasonal statistical evaluation</li>
+              <li>Supervised ML models for contamination risk prediction</li>
+              <li>Dashboards / reporting with R and Power BI</li>
+            </ul>
+          </div>
+
+          <div class="col-6">
+            <h3>Aims</h3>
+            <ul style="margin:0; padding-left:18px;">
+              <li>Identify critical matrix–contaminant combinations</li>
+              <li>Detect seasonal/climatic patterns influencing contamination</li>
+              <li>Estimate future non-compliance probabilities</li>
+              <li>Deliver an integrated decision support framework for preventive action</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="menu" style="justify-content:flex-start; margin-top:14px;">
+          <a class="btn btn--primary" href="thesis.html">Thesis PDF</a>
+          <a class="btn" href="assets/thesis.pdf" target="_blank" rel="noopener">Open thesis.pdf</a>
+        </div>
+      </div>
+
+      <!-- Tech stack -->
+      <div class="col-12 card">
+        <h2>Tools & deliverables</h2>
+        <div class="chips">
+          <span class="chip">Python</span>
+          <span class="chip">SQL / CSV</span>
+          <span class="chip">Machine Learning</span>
+          <span class="chip">R</span>
+          <span class="chip">Power BI</span>
+          <span class="chip">Reproducible workflows</span>
+        </div>
+        <p class="muted" style="margin-top:10px;">
+          Expected outputs include data harmonization pipelines, interpretable metrics on compliance trends,
+          predictive models and a dashboard/reporting layer for decision support.
+        </p>
+      </div>
+
     </div>
+
     <footer>© <span id="year"></span> Martina Castellucci</footer>
   </div>
 </section>

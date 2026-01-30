@@ -31,10 +31,28 @@
 <main class="hero" style="padding-bottom:0;">
   <div class="wrap">
     <div class="about-hero">
-       <div class="about-hero__text">
+      <div class="about-hero__text">
         <h1>About <span class="grad">me</span></h1>
-        <img src="assets/img/profile.png" alt="Martina Castellucci">
-        <p class="muted">Cervia, Italy · Open to research and industry opportunities</p>
+        <p class="subtitle">
+          Bioinformatics MSc student at the University of Bologna, with a background in Biotechnology.
+          I work at the intersection of genomics, transcriptomics (RNA-seq) and machine learning,
+          with a strong focus on reproducible workflows and clear scientific communication.
+        </p>
+
+        <div class="chips">
+          <span class="chip">Genomics</span>
+          <span class="chip">Transcriptomics (RNA-seq)</span>
+          <span class="chip">Machine Learning</span>
+          <span class="chip">Reproducible workflows</span>
+          <span class="chip">Scientific communication</span>
+        </div>
+      </div>
+
+      <div class="about-hero__media card">
+        <img class="about-img" src="assets/img/profile.png" alt="Martina Castellucci" loading="lazy">
+        <p class="muted" style="margin-top:12px; text-align:center;">
+          Cervia, Italy · Open to research and industry opportunities
+        </p>
       </div>
     </div>
   </div>
@@ -49,20 +67,20 @@
       <div class="cervia">
         <div class="cervia__text">
           <h2>From Cervia</h2>
-          <p>
-            I'm originally from Cervia, a coastal town in Emilia-Romagna.
-            I value a balanced, outdoor-oriented lifestyle and bring the same
-            energy into my work: curiosity, discipline and long-term focus.
+          <p class="muted" style="margin-top:0;">
+            I'm originally from Cervia, a coastal town in Emilia-Romagna. I value a balanced, outdoor-oriented lifestyle
+            and bring the same energy into my work: curiosity, discipline and long-term focus.
           </p>
 
-          <a class="btn" href="https://emiliaromagnaturismo.it/en/towns/cervia"
-             target="_blank" rel="noopener">
-            Learn more about Cervia
-          </a>
+          <div class="menu" style="justify-content:flex-start; margin-top:14px;">
+            <a class="btn" href="https://emiliaromagnaturismo.it/en/towns/cervia" target="_blank" rel="noopener">
+              Learn more about Cervia
+            </a>
+          </div>
         </div>
 
         <div class="cervia__media">
-          <img src="assets/img/map.jpg" alt="Map of Cervia">
+          <img class="map-img" src="assets/img/map.jpg" alt="Map of Cervia" loading="lazy">
         </div>
       </div>
     </div>
@@ -70,35 +88,32 @@
     <!-- PERSONAL PROFILE -->
     <div class="card">
       <h2>Personal profile</h2>
-      <p>
-        Proactive, positive and goal-oriented, I am deeply interested in science and
-        data-driven thinking, especially where computation helps explain biological
-        complexity. Born in 2001.
+      <p class="muted" style="margin-top:0;">
+        Proactive, positive and goal-oriented, I am deeply interested in science and data-driven thinking—especially where
+        computation helps explain biological complexity. Born in 2001.
       </p>
     </div>
 
     <!-- CONTACT -->
     <div class="card">
       <h2>Contact & links</h2>
-      <p class="muted">
+      <p class="muted" style="margin-top:0;">
         The best way to explore my work is through GitHub. You can also find me on LinkedIn.
       </p>
 
-      <div class="menu">
-        <a class="btn btn--primary" href="https://github.com/Martinaa1408" target="_blank">GitHub</a>
-        <a class="btn" href="https://www.linkedin.com/in/martina-castellucci-45b120298" target="_blank">LinkedIn</a>
+      <div class="menu" style="justify-content:flex-start; flex-wrap:wrap;">
+        <a class="btn btn--primary" href="https://github.com/Martinaa1408" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn" href="https://www.linkedin.com/in/martina-castellucci-45b120298" target="_blank" rel="noopener">LinkedIn</a>
         <a class="btn" href="privacy.html">Privacy Policy</a>
       </div>
     </div>
 
-
-    </div>
-
-    <footer>© 2026 Martina Castellucci · <a href="privacy.html">Privacy Policy</a></footer>
+    <footer class="site-footer">
+      © <span id="year"></span> Martina Castellucci · <a href="privacy.html">Privacy Policy</a>
+    </footer>
 
   </div>
 </section>
-
 
 </body>
 </html>

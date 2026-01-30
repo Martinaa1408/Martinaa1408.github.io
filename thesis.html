@@ -7,19 +7,67 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
   <script defer src="assets/js/main.js"></script>
+
+  <style>
+    .status{
+      display:flex; align-items:center; gap:10px;
+      padding:12px 14px; border:1px solid var(--border);
+      border-radius: 16px; background: rgba(255,255,255,.82);
+      margin-top:12px;
+    }
+    .spin{
+      width:14px; height:14px; border-radius:999px;
+      border:2px solid rgba(124,92,255,.25);
+      border-top-color: var(--accent);
+      animation: sp 0.9s linear infinite;
+    }
+    @keyframes sp{ to { transform: rotate(360deg); } }
+    .pdfbox{
+      margin-top:14px;
+      border:1px solid var(--border);
+      border-radius: 18px;
+      overflow:hidden;
+      background: rgba(255,255,255,.9);
+    }
+    .pdfbox iframe{
+      width:100%;
+      height: 72vh;
+      border:0;
+      display:block;
+    }
+  </style>
 </head>
 <body>
 
 <header class="topbar">
   <div class="wrap topbar__inner">
     <a class="brand" href="index.html"><span class="brand__dot"></span><span>Martina Castellucci</span></a>
+
     <nav class="nav">
-      <button class="nav__toggle" id="navToggle">Menu</button>
+      <button class="nav__toggle" id="navToggle" aria-expanded="false">Menu</button>
       <ul class="nav__menu" id="navMenu">
         <li><a class="nav__link" href="index.html">Home</a></li>
-        <li><a class="nav__link" href="master.html">Master</a></li>
-        <li><a class="nav__link" href="thesis.html">Thesis</a></li>
-        <li><a class="nav__link" href="CV.html">CV</a></li>
+
+        <li class="dd">
+          <button class="dd__btn" type="button">Academia ▾</button>
+          <ul class="dd__menu">
+            <li><a href="master.html">MSc (Bioinformatics)</a></li>
+            <li><a href="thesis.html">MSc Thesis</a></li>
+            <li><a href="bachelor.html">Bachelor (Biotechnology)</a></li>
+          </ul>
+        </li>
+
+        <li class="dd">
+          <button class="dd__btn" type="button">Career ▾</button>
+          <ul class="dd__menu">
+            <li><a href="internship-neotron.html">Internship (Neotron)</a></li>
+            <li><a href="experience.html">Experience</a></li>
+            <li><a href="cv.html">CV</a></li>
+          </ul>
+        </li>
+
+        <li><a class="nav__link" href="travel.html">Travel</a></li>
+        <li><a class="nav__link" href="about.html">About</a></li>
       </ul>
     </nav>
   </div>
@@ -28,11 +76,22 @@
 <main class="hero" style="padding-bottom:0;">
   <div class="wrap">
     <h1>MSc <span class="grad">Thesis</span></h1>
-    <p class="subtitle">Topic, goals, methods, and current status.</p>
+    <p class="subtitle">
+      Thesis work developed in the context of my MSc path and internship at Neotron, focusing on data-driven decision support and
+      reproducible analytical workflows.
+    </p>
 
-    <div class="menu">
+    <div class="menu" style="flex-wrap:wrap;">
       <a class="btn btn--primary" href="assets/thesis.pdf" target="_blank" rel="noopener">Open Thesis (PDF)</a>
-      <a class="btn" href="internship-neotron.html">Internship</a>
+      <a class="btn" href="internship-neotron.html">Internship (Neotron)</a>
+      <a class="btn" href="https://www.neotron.it/en" target="_blank" rel="noopener">Neotron website</a>
+    </div>
+
+    <div class="status">
+      <span class="spin" aria-hidden="true"></span>
+      <div>
+        <b>Status:</b> updating content — <span class="muted">more details and figures will be added soon.</span>
+      </div>
     </div>
   </div>
 </main>
@@ -40,25 +99,41 @@
 <section class="section">
   <div class="wrap">
     <div class="grid">
+
       <div class="col-12 card">
         <h2>Overview</h2>
         <p>
-          Thesis topic is being defined within bioinformatics/omics. I’m particularly interested in real datasets,
-          reproducible pipelines and biologically meaningful interpretation.
+          The project focuses on organizing analytical and laboratory-derived information into structured datasets,
+          enabling clear monitoring, reporting and predictive modelling where appropriate.
         </p>
         <div class="chips">
-          <span class="chip">Genomics</span>
-          <span class="chip">RNA-seq</span>
-          <span class="chip">Reproducibility</span>
-          <span class="chip">Biological insight</span>
+          <span class="chip">Data integration</span>
+          <span class="chip">QC & metrics</span>
+          <span class="chip">Reproducible pipeline</span>
+          <span class="chip">Interpretation</span>
         </div>
+
+        <div class="pdfbox" title="Thesis PDF preview">
+          <iframe src="assets/thesis.pdf"></iframe>
+        </div>
+
+        <p class="muted" style="margin-top:10px;">
+          If the embedded preview does not load on your browser, use “Open Thesis (PDF)”.
+        </p>
       </div>
 
       <div class="col-12 card">
-        <h2>PDF Preview</h2>
-        <iframe title="Thesis PDF" src="assets/thesis.pdf"
-          style="width:100%;height:760px;border:1px solid var(--border);border-radius:14px;background:white;"></iframe>
+        <h2>Connection with the internship</h2>
+        <p>
+          The thesis is tightly connected to my internship at Neotron: real laboratory context, real constraints,
+          and emphasis on reliability, traceability and communication of results.
+        </p>
+        <div class="menu" style="justify-content:flex-start; flex-wrap:wrap;">
+          <a class="btn btn--primary" href="internship-neotron.html">Go to Internship page</a>
+          <a class="btn" href="master.html">Back to MSc page</a>
+        </div>
       </div>
+
     </div>
 
     <footer>© <span id="year"></span> Martina Castellucci</footer>

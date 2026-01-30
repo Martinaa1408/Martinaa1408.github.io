@@ -30,31 +30,38 @@
 <!-- HERO -->
 <main class="hero" style="padding-bottom:0;">
   <div class="wrap">
-    <div class="about-hero">
-      <div class="about-hero__text">
+
+    <div style="display:flex; gap:40px; align-items:center; flex-wrap:wrap;">
+
+      <!-- TEXT -->
+      <div style="flex:1 1 520px; min-width:280px;">
         <h1>About <span class="grad">me</span></h1>
+
         <p class="subtitle">
           Bioinformatics MSc student at the University of Bologna, with a background in Biotechnology.
-          I work at the intersection of genomics, transcriptomics (RNA-seq) and machine learning,
-          with a strong focus on reproducible workflows and clear scientific communication.
-        </p>
-
-        <div class="chips">
-          <span class="chip">Genomics</span>
-          <span class="chip">Transcriptomics (RNA-seq)</span>
-          <span class="chip">Machine Learning</span>
-          <span class="chip">Reproducible workflows</span>
-          <span class="chip">Scientific communication</span>
-        </div>
-      </div>
-
-      <div class="about-hero__media card">
-        <img class="about-img" src="assets/img/profile.png" alt="Martina Castellucci" loading="lazy">
-        <p class="muted" style="margin-top:12px; text-align:center;">
-          Cervia, Italy · Open to research and industry opportunities
         </p>
       </div>
+
+      <!-- IMAGE -->
+      <div style="flex:0 0 auto; text-align:center;">
+        <img src="assets/img/profile.png"
+             alt="Martina Castellucci"
+             style="
+               width:100%;
+               max-width:360px;
+               height:auto;
+               border-radius:22px;
+               border:1px solid #e5e7eb;
+               object-fit:cover;
+               display:block;
+             ">
+        <p class="muted" style="margin-top:12px;">
+          Cervia, Italy 
+        </p>
+      </div>
+
     </div>
+
   </div>
 </main>
 
@@ -64,24 +71,38 @@
 
     <!-- FROM CERVIA -->
     <div class="card">
-      <div class="cervia">
-        <div class="cervia__text">
+      <div style="display:flex; gap:32px; align-items:center; flex-wrap:wrap;">
+
+        <div style="flex:1 1 520px; min-width:280px;">
           <h2>From Cervia</h2>
           <p class="muted" style="margin-top:0;">
-            I'm originally from Cervia, a coastal town in Emilia-Romagna. I value a balanced, outdoor-oriented lifestyle
-            and bring the same energy into my work: curiosity, discipline and long-term focus.
+            I'm originally from Cervia, a coastal town in Emilia-Romagna.
+            I value a balanced, outdoor-oriented lifestyle and bring the same energy into my work:
+            curiosity, discipline and long-term focus.
           </p>
 
-          <div class="menu" style="justify-content:flex-start; margin-top:14px;">
-            <a class="btn" href="https://emiliaromagnaturismo.it/en/towns/cervia" target="_blank" rel="noopener">
-              Learn more about Cervia
-            </a>
-          </div>
+          <a class="btn" href="https://emiliaromagnaturismo.it/en/towns/cervia"
+             target="_blank" rel="noopener">
+            Learn more about Cervia
+          </a>
         </div>
 
-        <div class="cervia__media">
-          <img class="map-img" src="assets/img/map.jpg" alt="Map of Cervia" loading="lazy">
+        <div style="flex:0 0 auto; text-align:center;">
+          <img src="assets/img/map.jpg"
+               alt="Map of Cervia"
+               style="
+                 width:100%;
+                 max-width:240px;
+                 height:auto;
+                 aspect-ratio:1/1;
+                 object-fit:cover;
+                 border-radius:18px;
+                 border:1px solid #e5e7eb;
+                 display:block;
+                 margin:auto;
+               ">
         </div>
+
       </div>
     </div>
 
@@ -89,8 +110,9 @@
     <div class="card">
       <h2>Personal profile</h2>
       <p class="muted" style="margin-top:0;">
-        Proactive, positive and goal-oriented, I am deeply interested in science and data-driven thinking—especially where
-        computation helps explain biological complexity. Born in 2001.
+        Proactive, positive and goal-oriented, I am deeply interested in science and
+        data-driven thinking, especially where computation helps explain biological complexity.
+        Born in 2001.
       </p>
     </div>
 
@@ -108,8 +130,9 @@
       </div>
     </div>
 
-    <footer class="site-footer">
-      © <span id="year"></span> Martina Castellucci · <a href="privacy.html">Privacy Policy</a>
+    <!-- FOOTER -->
+    <footer style="text-align:center; padding:28px 0; color:#6b7280;">
+      © <span id="year"></span> Martina Castellucci
     </footer>
 
   </div>

@@ -1,163 +1,144 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>MSc in Bioinformatics · Martina Castellucci</title>
+  <meta charset="utf-8">
+  <title>MSc in Bioinformatics • Martina Castellucci</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
 
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
   <script defer src="assets/js/main.js"></script>
 </head>
 
 <body>
 
-  <!-- NAV: se già ce l'hai uguale su tutte le pagine, puoi sostituire questo blocco con il tuo -->
-  <header class="nav">
-    <div class="wrap nav__inner">
-      <a class="brand" href="index.html"><span class="dot"></span> Martina Castellucci</a>
+<header class="topbar">
+  <div class="wrap topbar__inner">
+    <a class="brand" href="index.html"><span class="brand__dot"></span><span>Martina Castellucci</span></a>
 
-      <nav class="nav__links">
-        <a href="index.html">Home</a>
+    <nav class="nav">
+      <button class="nav__toggle" id="navToggle" aria-expanded="false">Menu</button>
+      <ul class="nav__menu" id="navMenu">
+        <li><a class="nav__link" href="index.html">Home</a></li>
 
-        <div class="drop">
-          <button class="drop__btn" type="button">Academia ▾</button>
-          <div class="drop__menu">
-            <a href="bachelor.html">Bachelor</a>
-            <a href="master.html" aria-current="page">Master</a>
-            <a href="thesis.html">MSc Thesis</a>
-          </div>
-        </div>
+        <li class="dd">
+          <button class="dd__btn" type="button">Academia ▾</button>
+          <ul class="dd__menu">
+            <li><a href="master.html" aria-current="page">MSc (Bioinformatics)</a></li>
+            <li><a href="thesis.html">MSc Thesis</a></li>
+            <li><a href="bachelor.html">Bachelor (Biotechnology)</a></li>
+          </ul>
+        </li>
 
-        <div class="drop">
-          <button class="drop__btn" type="button">Career ▾</button>
-          <div class="drop__menu">
-            <a href="internship-neotron.html">Internship (Neotron)</a>
-            <a href="experience.html">Work experience</a>
-            <a href="cv.html">CV</a>
-          </div>
-        </div>
+        <li class="dd">
+          <button class="dd__btn" type="button">Career ▾</button>
+          <ul class="dd__menu">
+            <li><a href="internship-neotron.html">Internship (Neotron)</a></li>
+            <li><a href="experience.html">Experience</a></li>
+            <li><a href="cv.html">CV</a></li>
+          </ul>
+        </li>
 
-        <a href="travel.html">Travel</a>
-        <a href="about.html">About</a>
-      </nav>
+        <li><a class="nav__link" href="travel.html">Travel</a></li>
+        <li><a class="nav__link" href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
-      <div class="nav__icons">
-        <a class="iconbtn" href="https://github.com/Martinaa1408" target="_blank" rel="noopener" aria-label="GitHub">
-          <img src="assets/img/github.png" alt="" />
-        </a>
-        <a class="iconbtn" href="https://www.linkedin.com/in/martina-castellucci-45b120298" target="_blank" rel="noopener" aria-label="LinkedIn">
-          <img src="assets/img/linkedin.png" alt="" />
-        </a>
-        <a class="iconbtn" href="https://www.instagram.com/martinacastelluccii/" target="_blank" rel="noopener" aria-label="Instagram">
-          <img src="assets/img/instagram.png" alt="" />
-        </a>
+<main class="hero">
+  <div class="wrap">
+    <h1>MSc in <span class="grad">Bioinformatics</span></h1>
+    <p class="subtitle">
+      University of Bologna — a 2nd-cycle (Master’s) degree program bridging life sciences with computational analysis,
+      reproducible pipelines and data-driven interpretation.
+    </p>
+
+    <div class="menu" style="flex-wrap:wrap;">
+      <a class="btn btn--primary" href="thesis.html">MSc Thesis</a>
+      <a class="btn" href="internship-neotron.html">Internship (Neotron)</a>
+      <a class="btn" href="cv.html">CV</a>
+      <a class="btn" href="https://corsi.unibo.it/2cycle/Bioinformatics/index.html" target="_blank" rel="noopener">
+        Official course page
+      </a>
+    </div>
+  </div>
+</main>
+
+<section class="section">
+  <div class="wrap grid">
+
+    <div class="col-12 card">
+      <h2>Program overview</h2>
+      <p>
+        The MSc in Bioinformatics at the University of Bologna combines computational methods and life-science expertise
+        to analyse biological data and produce interpretable results. The program emphasizes reproducible workflows,
+        scientific reporting and collaboration in an international environment.
+      </p>
+      <div class="chips">
+        <span class="chip">Computational biology</span>
+        <span class="chip">Reproducible workflows</span>
+        <span class="chip">Data-driven interpretation</span>
+        <span class="chip">International context</span>
       </div>
     </div>
-  </header>
 
-  <!-- HERO (stesso stile bachelor) -->
-  <section class="hero">
-    <div class="wrap">
-      <h1>MSc in <span class="grad">Bioinformatics</span></h1>
-      <p class="subtitle">
-        University of Bologna — a 2nd-cycle (Master’s) degree program bridging life sciences with computational analysis,
-        reproducible pipelines and data-driven interpretation.
+    <div class="col-12 card">
+      <h2>Focus areas</h2>
+      <p>
+        My MSc path focuses on computational methods for biological data analysis, with particular interest in genomics
+        and transcriptomics, and in applying machine learning where it provides interpretable and biologically meaningful value.
+      </p>
+      <div class="chips">
+        <span class="chip">Genomics</span>
+        <span class="chip">Transcriptomics (RNA-seq)</span>
+        <span class="chip">Machine Learning</span>
+        <span class="chip">Data QC & metrics</span>
+        <span class="chip">Reproducible pipelines</span>
+        <span class="chip">Scientific reporting</span>
+      </div>
+    </div>
+
+    <div class="col-12 card">
+      <h2>Class moments</h2>
+      <p>
+        Fragments from lectures, meetings and group work during the academic year.
+        The program is also a unique opportunity to meet motivated people — including many international classmates —
+        and grow through shared projects and discussions.
       </p>
 
-      <div class="menu" style="flex-wrap:wrap;">
-        <a class="btn btn--primary" href="thesis.html">MSc Thesis</a>
-        <a class="btn" href="internship-neotron.html">Internship (Neotron)</a>
-        <a class="btn" href="cv.html">CV</a>
-        <a class="btn" href="https://corsi.unibo.it/2cycle/Bioinformatics/index.html" target="_blank" rel="noopener">
-          Official course page
-        </a>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:12px;">
+        <img src="assets/img/lab2class.jpg" alt="Group work and class activity"
+             style="width:100%; height:220px; object-fit:cover; border-radius:16px; border:1px solid var(--border);">
+        <img src="assets/img/spaceclass.jpg" alt="Lecture and classroom moment"
+             style="width:100%; height:220px; object-fit:cover; border-radius:16px; border:1px solid var(--border);">
       </div>
+
+      <p class="muted" style="margin-top:10px;">Photos from academic life and study moments.</p>
     </div>
-  </section>
 
-  <section class="section">
-    <div class="wrap grid">
+    <div class="col-12 card">
+      <h2>Projects on GitHub</h2>
+      <p>
+        Course projects and personal work are available on my GitHub profile.
+        They include reproducible workflows, reports and analyses on real biological datasets.
+      </p>
 
-      <!-- Program overview -->
-      <div class="col-12 card">
-        <h2>Program overview</h2>
-        <p>
-          The MSc in Bioinformatics at the University of Bologna combines computational methods and life-science expertise
-          to analyse biological data and produce interpretable results. The program emphasizes reproducible workflows,
-          scientific reporting and collaboration in an international environment.
-        </p>
-
-        <div class="chips">
-          <span class="chip">Computational biology</span>
-          <span class="chip">Reproducible workflows</span>
-          <span class="chip">Data-driven interpretation</span>
-          <span class="chip">International context</span>
-        </div>
+      <div class="chips" style="margin-top:12px;">
+        <span class="chip">Documentation</span>
+        <span class="chip">Reproducibility</span>
+        <span class="chip">Biological insight</span>
       </div>
-
-      <!-- Focus areas -->
-      <div class="col-12 card">
-        <h2>Focus areas</h2>
-        <p>
-          My MSc path focuses on computational methods for biological data analysis, with particular interest in genomics
-          and transcriptomics, and in applying machine learning where it provides interpretable and biologically meaningful value.
-        </p>
-
-        <div class="chips">
-          <span class="chip">Genomics</span>
-          <span class="chip">Transcriptomics (RNA-seq)</span>
-          <span class="chip">Machine Learning</span>
-          <span class="chip">Data QC & metrics</span>
-          <span class="chip">Reproducible pipelines</span>
-          <span class="chip">Scientific reporting</span>
-        </div>
-      </div>
-
-      <!-- Class moments (in card, like bachelor style) -->
-      <div class="col-12 card">
-        <h2>Class moments</h2>
-        <p>
-          Fragments from lectures, meetings and group work during the academic year.
-          The program is also a unique opportunity to meet motivated people — including many international classmates —
-          and grow through shared projects and discussions.
-        </p>
-
-        <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:12px;">
-          <img src="assets/img/lab2class.jpg" alt="Group work and class activity"
-               style="width:100%; height:220px; object-fit:cover; border-radius:16px; border:1px solid var(--border);">
-          <img src="assets/img/spaceclass.jpg" alt="Lecture and classroom moment"
-               style="width:100%; height:220px; object-fit:cover; border-radius:16px; border:1px solid var(--border);">
-        </div>
-
-        <p class="muted" style="margin-top:10px;">
-        </p>
-      </div>
-
-      <!-- Projects -->
-      <div class="col-12 card">
-        <h2>Projects on GitHub</h2>
-        <p>
-          Course projects and personal work are available on my GitHub profile.
-          They include reproducible workflows, reports and analyses on real biological datasets.
-        </p>
-
-         <div class="chips" style="margin-top:12px;">
-          <span class="chip">Documentation</span>
-          <span class="chip">Reproducibility</span>
-          <span class="chip">Biological insight</span>
-        </div>
       
-
-        <div class="menu" style="justify-content:flex-start; flex-wrap:wrap;">
-          <a class="btn btn--primary" href="https://github.com/Martinaa1408?tab=repositories" target="_blank" rel="noopener">
-            Open GitHub
-          </a>
-        </div>
+      <div class="menu" style="justify-content:flex-start; flex-wrap:wrap;">
+        <a class="btn btn--primary" href="https://github.com/Martinaa1408?tab=repositories" target="_blank" rel="noopener">Open GitHub</a>
       </div>
 
-      <footer>© <span id="year"></span> Martina Castellucci</footer>
     </div>
-  </section>
+
+    <footer>© <span id="year"></span> Martina Castellucci</footer>
+  </div>
+</section>
 
 </body>
 </html>

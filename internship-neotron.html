@@ -74,6 +74,8 @@
               Neotron Laboratories <span class="muted">(LMIB Division)</span>
             </div>
             <div class="muted" style="margin-top:4px;">Part of the Cotecna Group · Modena, Italy</div>
+            <div class="muted" style="margin-top:6px; font-size:13px;">
+              ACCREDIA-accredited · ISO/IEC 17025 · 550+ staff
             </div>
           </div>
         </div>
@@ -118,13 +120,13 @@
       <div class="col-6 card">
         <h2>Internship details</h2>
         <ul style="margin:0; padding-left:18px; line-height:1.9;">
-          <li><b>Host:</b> Neotron Laboratories, LMIB Division — Modena</li>
+          <li><b>Host:</b> Neotron Laboratories, LMIB Division, Modena</li>
           <li><b>Start date:</b> 02/02/2026</li>
           <li><b>Role:</b> Bioinformatics Specialist</li>
           <li><b>Industry tutor:</b> Andrea Trenti (Technical Director)</li>
           <li><b>External supervisor:</b> Leila El Boulami</li>
           <li><b>Internal supervisor:</b> Samuele Bovo</li>
-          <li><b>Track:</b> MSc Bioinformatics — University of Bologna</li>
+          <li><b>Track:</b> MSc Bioinformatics, University of Bologna</li>
         </ul>
       </div>
 
@@ -151,9 +153,9 @@
           <div class="col-6">
             <h3 style="margin-top:0;">Data</h3>
             <p class="muted">
-              Historical records from Neotron's SQL Server LIMS, extracted as <code>.xlsx</code>
-              workbooks via star-schema SQL queries. Regulatory limits derived dynamically at query
-              time via <code>CASE WHEN</code> — no static storage.
+              Historical analytical records from Neotron's LIMS, extracted as structured workbooks
+              via SQL queries. Regulatory limits are derived dynamically at query time, ensuring
+              the system stays aligned as the regulation is updated.
             </p>
           </div>
           <div class="col-6">
@@ -161,7 +163,7 @@
             <p class="muted">
               Regulation (EU) 2023/915 organises contaminants into six thematic sections: mycotoxins,
               plant toxins, heavy metals, POPs/PFAS, process contaminants, nitrates/perchlorates.
-              Its <em>living</em> nature — updated continuously as EFSA adopts new opinions —
+              Its living nature, updated continuously as EFSA adopts new opinions,
               motivates a dynamic computational approach.
             </p>
           </div>
@@ -173,7 +175,8 @@
         <h2>Pipeline — four notebooks</h2>
         <p class="muted">
           Modular, reproducible pipeline in Python 3.10 across four Jupyter notebooks,
-          each controlled by a single <code>SECTION_NUMBER</code> variable.
+          each controlled by a single section variable for full reproducibility across
+          the six regulatory sections.
         </p>
 
         <div class="grid" style="margin-top:4px;">
@@ -181,11 +184,12 @@
           <div class="col-6">
             <h3 style="margin-top:12px;">NB1 — Data cleaning &amp; exploratory analysis</h3>
             <p class="muted">
-              SQL extraction from the LIMS star-schema. <code>RISULTATO</code> parsing:
-              administrative strings dropped, not-detected values mapped to 0,
-              left-censored entries dropped. Descriptive statistics, box plots, NC rate bar charts,
-              contaminant×month heatmaps. Normality via Shapiro–Wilk / Anderson–Darling.
-              Mann–Kendall on STL-deseasonalised monthly NC rates with Sen's slope and BH–FDR.
+              SQL extraction from the LIMS. Raw result field parsing: administrative strings dropped,
+              not-detected values mapped to 0, left-censored entries dropped.
+              Descriptive statistics, box plots, NC rate bar charts, contaminant by month heatmaps.
+              Normality testing via Shapiro-Wilk or Anderson-Darling.
+              Temporal trend analysis via Mann-Kendall on deseasonalised monthly NC rates
+              with Sen's slope and multiple testing correction.
               PCA and hierarchical clustering of food matrices.
             </p>
             <div class="chips" style="margin-top:6px;">
@@ -200,10 +204,11 @@
           <div class="col-6">
             <h3 style="margin-top:12px;">NB2 — Statistical inference &amp; risk scoring</h3>
             <p class="muted">
-              Unit: (contaminant, sub-matrix) pair. Fisher's exact test + BH–FDR identifies
-              pairs with significantly elevated NC rates. Wilson 95% CI quantifies uncertainty.
-              DSS risk thresholds calibrated empirically from the observed NC rate distribution.
-              Output: <code>cross_submatrix_risk.csv</code> with NC rate, CI bounds, and DSS class per pair.
+              Unit of analysis: contaminant / sub-matrix pair. Fisher's exact test with
+              multiple testing correction identifies pairs with significantly elevated NC rates.
+              Wilson confidence intervals quantify uncertainty around each estimate.
+              DSS risk thresholds calibrated empirically from the observed NC rate distribution,
+              producing a HIGH / MEDIUM / LOW classification per pair.
             </p>
             <div class="chips" style="margin-top:6px;">
               <span class="chip">scipy</span>
@@ -215,11 +220,12 @@
           <div class="col-6">
             <h3>NB3 — Machine learning risk prediction</h3>
             <p class="muted">
-              Binary classification for pairs with insufficient history for direct inference.
-              Leakage-free features from dataset topology; <code>nc_rate</code> and
-              <code>n_nc</code> strictly excluded. Four models (Random Forest, XGBoost, LightGBM,
-              CatBoost) with native class weighting, stratified 5-fold CV, PR-AUC primary metric.
-              SHAP for global and local explanations. Final DSS: AND logic for HIGH, OR for MEDIUM.
+              Binary classification for pairs with insufficient observational history for direct
+              statistical inference. Leakage-free features derived from dataset topology only.
+              Four models (Random Forest, XGBoost, LightGBM, CatBoost) with native class weighting,
+              stratified 5-fold cross-validation, and PR-AUC as primary metric.
+              SHAP values for global feature importance and individual-level explanations.
+              Final DSS score combines statistical and predicted signals.
             </p>
             <div class="chips" style="margin-top:6px;">
               <span class="chip">scikit-learn</span>
@@ -231,13 +237,15 @@
           </div>
 
           <div class="col-6">
-            <h3>NB4 — Biological <em>in silico</em> analysis</h3>
+            <h3>NB4 — Biological in silico analysis</h3>
             <p class="muted">
-              HIGH/MEDIUM contaminants → CTD REST API (chemical–gene interactions,
-              <em>H. sapiens</em> + <em>M. musculus</em>, direct evidence only).
-              GO / KEGG enrichment via gseapy/Enrichr + BH–FDR. Tripartite
-              contaminant–gene–pathway network (NetworkX + pyvis). Hub genes
-              (connected to two or more contaminants) flagged as priority signals for RASFF alerts.
+              High-risk contaminants mapped to chemical-gene interactions via the Comparative
+              Toxicogenomics Database, queried via REST API for human and mouse targets
+              with direct experimental evidence only.
+              GO and KEGG pathway enrichment analysis with multiple testing correction.
+              Tripartite contaminant-gene-pathway network built with NetworkX, visualised
+              interactively via pyvis. Hub genes connected to multiple contaminants flagged
+              as priority signals for RASFF alert communication.
             </p>
             <div class="chips" style="margin-top:6px;">
               <span class="chip">gseapy</span>
@@ -262,7 +270,7 @@
           <span class="chip">Reproducible workflows</span>
         </div>
         <p class="muted" style="margin-top:10px;">
-          Outputs: cleaned datasets, section-level EDA reports, risk-scored contaminant–matrix
+          Outputs: cleaned datasets, section-level EDA reports, risk-scored contaminant-matrix
           catalogue, ML model cards with SHAP explanations, interactive biological network,
           and a Power BI dashboard for operational monitoring.
         </p>

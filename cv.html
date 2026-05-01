@@ -47,13 +47,12 @@
 <main class="hero" style="padding-bottom:0;">
   <div class="wrap">
     <h1>Curriculum <span class="grad">Vitae</span></h1
-    <p class="subtitle">Two versions of the Curriculum Vitae are available (Italian and English, EU format).
-    Select the preferred version to preview or download the PDF.</p>
+    <p class="subtitle">One version of the Curriculum Vitae is available (English, EU format).
+    Select the version to preview or download the PDF.</p>
 
     <div class="menu" style="flex-wrap:wrap;">
-      <button class="btn btn--primary" id="btnITA" type="button">Italian (ITA)</button>
       <button class="btn" id="btnENG" type="button">English (EU format)</button>
-      <a class="btn" id="btnDL" href="assets/CV-ITA.pdf" target="_blank" rel="noopener">Download</a>
+      <a class="btn" id="btnDL" href="assets/European%20version%20CV.pdf" target="_blank" rel="noopener">Download</a>
     </div>
   </div>
 </main>
@@ -67,7 +66,7 @@
         <iframe
           id="cvFrame"
           title="CV PDF Preview"
-          src="assets/CV-ITA.pdf"
+          src="assets/European%20version%20CV.pdf"
           style="width:100%;height:780px;border:1px solid var(--border);border-radius:14px;background:white;">
         </iframe>
       </div>
@@ -77,30 +76,6 @@
   </div>
 </section>
 
-<script>
-  // Files (ENG has spaces -> encode them)
-  const ITA = "assets/CV-ITA.pdf";
-  const ENG = "assets/European%20version%20CV.pdf";
-
-  const frame = document.getElementById("cvFrame");
-  const btnDL = document.getElementById("btnDL");
-  const btnITA = document.getElementById("btnITA");
-  const btnENG = document.getElementById("btnENG");
-
-  function setCV(which) {
-    const isITA = which === "ita";
-    const file = isITA ? ITA : ENG;
-
-    frame.src = file;
-    btnDL.href = file;
-
-    btnITA.classList.toggle("btn--primary", isITA);
-    btnENG.classList.toggle("btn--primary", !isITA);
-  }
-
-  btnITA.addEventListener("click", () => setCV("ita"));
-  btnENG.addEventListener("click", () => setCV("eng"));
-</script>
 
 </body>
 </html>

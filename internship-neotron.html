@@ -50,10 +50,9 @@
       <div class="col-6">
         <h1>Internship <span class="grad">Neotron</span></h1>
         <p class="subtitle">
-          End-to-end food contaminant surveillance pipeline and Decision Support System
-          governed by Regulation (EU) 2023/915.
+          Development of a Decision Support System for the Assessment
+          and Prediction of Food Contamination Risk
         </p>
-
         <div class="menu" style="justify-content:flex-start; flex-wrap:wrap;">
           <a class="btn" href="cv.html">Open CV</a>
           <a class="btn" href="thesis.html">MSc Thesis</a>
@@ -63,19 +62,11 @@
       <div class="col-6">
         <div class="card" style="display:flex; gap:18px; align-items:center;">
           <div style="
-            width:140px;
-            height:140px;
-            border-radius:22px;
-            border:1px solid var(--border);
-            background:#fff;
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            box-shadow: var(--shadow1);
-            flex-shrink:0;
-          ">
-            <img src="assets/img/logo.jpg"
-                 alt="Neotron logo"
+            width:140px; height:140px; border-radius:22px;
+            border:1px solid var(--border); background:#fff;
+            display:flex; align-items:center; justify-content:center;
+            box-shadow:var(--shadow1); flex-shrink:0;">
+            <img src="assets/img/logo.jpg" alt="Neotron logo"
                  style="max-width:100%; max-height:100%; object-fit:contain; padding:14px;">
           </div>
           <div>
@@ -83,13 +74,10 @@
               Neotron Laboratories <span class="muted">(LMIB Division)</span>
             </div>
             <div class="muted" style="margin-top:4px;">Part of the Cotecna Group · Modena, Italy</div>
-            <div class="muted" style="margin-top:6px; font-size:13px;">
-              ACCREDIA-accredited · ISO/IEC 17025 · 550+ staff
             </div>
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </main>
@@ -103,27 +91,20 @@
         <h2>About Neotron</h2>
         <p>
           Neotron is an ACCREDIA-accredited analytical laboratory based in Modena, part of the Cotecna Group,
-          operating in testing, inspection, and certification services across food, feed, pharmaceutical,
-          and environmental sectors. With 550+ staff and a high-throughput instrument fleet (30+ LC-MS/MS,
-          20+ GC-MS/MS), it accumulates a large proprietary occurrence dataset whose analytical
-          potential goes well beyond individual pass/fail judgements.
+          operating in testing, inspection, and certification across food, feed, pharmaceutical, and environmental
+          sectors. With 550+ staff and a high-throughput instrument fleet (30+ LC-MS/MS, 20+ GC-MS/MS), it
+          accumulates a large proprietary occurrence dataset whose analytical potential goes well beyond
+          individual pass/fail judgements.
         </p>
-
         <div class="grid" style="margin-top:14px; align-items:stretch;">
           <div class="col-6">
             <img src="assets/img/neotron.jpg" alt="Neotron" style="width:100%;border-radius:18px;border:1px solid var(--border);">
           </div>
           <div class="col-6">
-            <div class="chips" style="margin-bottom:10px;">
-              <span class="chip">Food &amp; Feed Safety</span>
-              <span class="chip">ISO/IEC 17025</span>
-              <span class="chip">ACCREDIA</span>
-              <span class="chip">Cotecna Group</span>
-            </div>
             <p class="muted">
-              The internship is hosted within the LMIB Division, where data from analytical workflows
-              are processed and integrated with regulatory frameworks to support evidence-based
-              decision-making in food safety monitoring.
+              The internship is hosted within the LMIB Division, where analytical data are processed
+              and integrated with regulatory frameworks to support evidence-based decision-making
+              in food safety monitoring.
             </p>
             <div class="menu" style="justify-content:flex-start; margin-top:10px; gap:8px;">
               <a class="btn btn--primary" href="https://www.neotron.it/en" target="_blank" rel="noopener">Website</a>
@@ -137,11 +118,12 @@
       <div class="col-6 card">
         <h2>Internship details</h2>
         <ul style="margin:0; padding-left:18px; line-height:1.9;">
-          <li><b>Host laboratory:</b> Neotron Laboratories, LMIB Division — Modena</li>
+          <li><b>Host:</b> Neotron Laboratories, LMIB Division — Modena</li>
           <li><b>Start date:</b> 02/02/2026</li>
-          <li><b>Role:</b> Bioinformatics Specialist (curricular internship)</li>
+          <li><b>Role:</b> Bioinformatics Specialist</li>
           <li><b>Industry tutor:</b> Andrea Trenti (Technical Director)</li>
-          <li><b>University supervisors:</b> Samuele Bovo &amp; Leila El Boulami</li>
+          <li><b>External supervisor:</b> Leila El Boulami</li>
+          <li><b>Internal supervisor:</b> Samuele Bovo</li>
           <li><b>Track:</b> MSc Bioinformatics — University of Bologna</li>
         </ul>
       </div>
@@ -158,39 +140,29 @@
       <!-- Thesis project -->
       <div class="col-12 card">
         <h2>Thesis project — overview</h2>
-        <p style="font-weight:800; margin-bottom:6px;">
-          Development of a Decision Support System for the Assessment and Prediction of Food Contamination Risk
-        </p>
         <p class="muted" style="margin-top:0;">
-          The project transforms a routine compliance archive into an operational risk intelligence tool.
-          Starting from raw LIMS data (~186,000 analytical results across 29 contaminants, 6 regulatory
-          sections, and 30+ food matrix categories), the system reconstructs conformity status,
-          identifies statistically significant risk patterns, extends prediction to pairs with limited
-          observational history via machine learning, and provides a biological characterisation of
-          priority contaminants in the One Health framework. The entire pipeline is governed by
-          Regulation (EU) 2023/915.
+          The project transforms a routine compliance archive into an operational risk intelligence tool,
+          combining statistical inference, machine learning, and biological characterisation of priority
+          contaminants. The pipeline spans multiple food matrix categories and contaminant classes across
+          the six regulatory sections of Regulation (EU) 2023/915.
         </p>
 
         <div class="grid" style="margin-top:10px;">
           <div class="col-6">
             <h3 style="margin-top:0;">Data</h3>
             <p class="muted">
-              Historical records from Neotron's SQL Server LIMS (Jan 2024 – Dec 2025), extracted
-              as <code>.xlsx</code> workbooks via star-schema SQL queries. Regulatory limits are
-              derived dynamically at query time from Reg. EU 2023/915 via a <code>CASE WHEN</code>
-              expression — no static storage — ensuring the system stays aligned as the regulation
-              is updated.
+              Historical records from Neotron's SQL Server LIMS, extracted as <code>.xlsx</code>
+              workbooks via star-schema SQL queries. Regulatory limits derived dynamically at query
+              time via <code>CASE WHEN</code> — no static storage.
             </p>
           </div>
-
           <div class="col-6">
             <h3 style="margin-top:0;">Regulatory framework</h3>
             <p class="muted">
-              Regulation (EU) 2023/915 replaced Reg. EC 1881/2006 in May 2023, consolidating
-              maximum levels across six thematic sections: mycotoxins, plant toxins, heavy metals,
-              POPs/PFAS, process contaminants, nitrates/perchlorates. Its <em>living</em> nature —
-              updated continuously as EFSA adopts new scientific opinions — motivates a dynamic,
-              computational approach rather than any static limit mapping.
+              Regulation (EU) 2023/915 organises contaminants into six thematic sections: mycotoxins,
+              plant toxins, heavy metals, POPs/PFAS, process contaminants, nitrates/perchlorates.
+              Its <em>living</em> nature — updated continuously as EFSA adopts new opinions —
+              motivates a dynamic computational approach.
             </p>
           </div>
         </div>
@@ -200,9 +172,8 @@
       <div class="col-12 card">
         <h2>Pipeline — four notebooks</h2>
         <p class="muted">
-          A modular, reproducible end-to-end pipeline in Python 3.10, implemented across four
-          Jupyter notebooks. A single <code>SECTION_NUMBER</code> variable controls all paths
-          and parameters, enabling one-click re-execution per regulatory section.
+          Modular, reproducible pipeline in Python 3.10 across four Jupyter notebooks,
+          each controlled by a single <code>SECTION_NUMBER</code> variable.
         </p>
 
         <div class="grid" style="margin-top:4px;">
@@ -210,16 +181,12 @@
           <div class="col-6">
             <h3 style="margin-top:12px;">NB1 — Data cleaning &amp; exploratory analysis</h3>
             <p class="muted">
-              SQL extraction from the LIMS star-schema (<code>dbo.ParametriProva</code> + dimension
-              tables). Parsing of the heterogeneous <code>RISULTATO</code> field: administrative
-              strings dropped, not-detected values mapped to 0, left-censored entries dropped.
-            </p>
-            <p class="muted">
-              Descriptive statistics and visualisations (box plots, NC rate bar charts with Wilson
-              intervals, contaminant×month heatmaps). Normality testing via Shapiro–Wilk or
-              Anderson–Darling. Temporal trend analysis via Mann–Kendall applied to
-              STL-deseasonalised monthly NC rates (min. 24 months), with Sen's slope and BH–FDR
-              correction. Multivariate PCA and hierarchical clustering of food matrices.
+              SQL extraction from the LIMS star-schema. <code>RISULTATO</code> parsing:
+              administrative strings dropped, not-detected values mapped to 0,
+              left-censored entries dropped. Descriptive statistics, box plots, NC rate bar charts,
+              contaminant×month heatmaps. Normality via Shapiro–Wilk / Anderson–Darling.
+              Mann–Kendall on STL-deseasonalised monthly NC rates with Sen's slope and BH–FDR.
+              PCA and hierarchical clustering of food matrices.
             </p>
             <div class="chips" style="margin-top:6px;">
               <span class="chip">pandas</span>
@@ -233,17 +200,10 @@
           <div class="col-6">
             <h3 style="margin-top:12px;">NB2 — Statistical inference &amp; risk scoring</h3>
             <p class="muted">
-              Unit of analysis: (contaminant, sub-matrix) pair aggregated over the full study period.
-              Fisher's exact test with BH–FDR correction identifies pairs with significantly elevated
-              NC rates. Wilson 95% confidence intervals quantify estimation uncertainty; interval
-              width is retained as a feature for NB3.
-            </p>
-            <p class="muted">
-              DSS risk thresholds calibrated empirically from the observed distribution:
-              <b>HIGH</b> = P<sub>90</sub>(nc_rate) = 0.113 ·
-              <b>MEDIUM</b> = P<sub>75</sub>(nc_rate) = 0.028 · <b>LOW</b> below.
-              Output: <code>cross_submatrix_risk.csv</code> with NC rate, CI bounds, and DSS class
-              per pair.
+              Unit: (contaminant, sub-matrix) pair. Fisher's exact test + BH–FDR identifies
+              pairs with significantly elevated NC rates. Wilson 95% CI quantifies uncertainty.
+              DSS risk thresholds calibrated empirically from the observed NC rate distribution.
+              Output: <code>cross_submatrix_risk.csv</code> with NC rate, CI bounds, and DSS class per pair.
             </p>
             <div class="chips" style="margin-top:6px;">
               <span class="chip">scipy</span>
@@ -255,18 +215,11 @@
           <div class="col-6">
             <h3>NB3 — Machine learning risk prediction</h3>
             <p class="muted">
-              Binary classification for pairs with insufficient observational history for direct
-              statistical inference. Seven leakage-free features derived from dataset topology
-              (sample size, log-transforms, ordinal size bins, contaminant and sub-matrix label
-              encodings, frequency proxies). <code>nc_rate</code> and <code>n_nc</code> are
-              strictly excluded to prevent data leakage.
-            </p>
-            <p class="muted">
-              Four candidate models — Random Forest, XGBoost, LightGBM, CatBoost — all with native
-              class weighting (no SMOTE). Stratified 5-fold cross-validation, PR-AUC as primary
-              metric. SHAP TreeExplainer for global feature importance and individual-level
-              explanations. Final DSS combines NB2 NC rate with NB3 predicted probability
-              (AND logic for HIGH, OR for MEDIUM).
+              Binary classification for pairs with insufficient history for direct inference.
+              Leakage-free features from dataset topology; <code>nc_rate</code> and
+              <code>n_nc</code> strictly excluded. Four models (Random Forest, XGBoost, LightGBM,
+              CatBoost) with native class weighting, stratified 5-fold CV, PR-AUC primary metric.
+              SHAP for global and local explanations. Final DSS: AND logic for HIGH, OR for MEDIUM.
             </p>
             <div class="chips" style="margin-top:6px;">
               <span class="chip">scikit-learn</span>
@@ -280,17 +233,11 @@
           <div class="col-6">
             <h3>NB4 — Biological <em>in silico</em> analysis</h3>
             <p class="muted">
-              HIGH and MEDIUM contaminants selected from NB3 DSS scores. Chemical–gene interactions
-              retrieved from the Comparative Toxicogenomics Database (CTD) via REST API for
-              <em>Homo sapiens</em> and <em>Mus musculus</em> (direct experimental evidence only,
-              no inferred associations).
-            </p>
-            <p class="muted">
-              GO Biological Process / Molecular Function and KEGG pathway enrichment via
-              gseapy/Enrichr with BH–FDR correction. Tripartite contaminant–gene–pathway network
-              constructed with NetworkX; interactive HTML visualisation via pyvis.
-              Hub genes — connected to two or more distinct contaminants — identified as shared
-              molecular targets and priority signals for RASFF alert communication.
+              HIGH/MEDIUM contaminants → CTD REST API (chemical–gene interactions,
+              <em>H. sapiens</em> + <em>M. musculus</em>, direct evidence only).
+              GO / KEGG enrichment via gseapy/Enrichr + BH–FDR. Tripartite
+              contaminant–gene–pathway network (NetworkX + pyvis). Hub genes
+              (connected to two or more contaminants) flagged as priority signals for RASFF alerts.
             </p>
             <div class="chips" style="margin-top:6px;">
               <span class="chip">gseapy</span>
@@ -315,10 +262,9 @@
           <span class="chip">Reproducible workflows</span>
         </div>
         <p class="muted" style="margin-top:10px;">
-          Expected outputs include cleaned analytical datasets, section-level EDA reports,
-          a risk-scored contaminant–matrix catalogue, ML model cards with SHAP explanations,
-          an interactive biological network visualisation, and a Power BI dashboard for
-          operational monitoring.
+          Outputs: cleaned datasets, section-level EDA reports, risk-scored contaminant–matrix
+          catalogue, ML model cards with SHAP explanations, interactive biological network,
+          and a Power BI dashboard for operational monitoring.
         </p>
       </div>
 

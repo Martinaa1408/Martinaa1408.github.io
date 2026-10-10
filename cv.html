@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>CV • Martina Castellucci</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script defer src="assets/js/main.js"></script>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap topbar__inner">
+    <a class="brand" href="index.html"><span class="brand__dot"></span><span>Martina Castellucci</span></a>
+
+    <nav class="nav">
+      <button class="nav__toggle" id="navToggle" aria-expanded="false">Menu</button>
+      <ul class="nav__menu" id="navMenu">
+        <li><a class="nav__link" href="index.html">Home</a></li>
+
+        <li class="dd">
+          <button class="dd__btn" type="button">Academia ▾</button>
+          <ul class="dd__menu">
+            <li><a href="master.html">MSc (Bioinformatics)</a></li>
+            <li><a href="thesis.html">MSc Thesis</a></li>
+            <li><a href="bachelor.html">Bachelor (Biotechnology)</a></li>
+          </ul>
+        </li>
+
+        <li class="dd">
+          <button class="dd__btn" type="button">Career ▾</button>
+          <ul class="dd__menu">
+            <li><a href="onit.html">Onit (current role)</a></li>
+            <li><a href="internship-neotron.html">Internship (Neotron)</a></li>
+            <li><a href="experience.html">Experience</a></li>
+            <li><a href="cv.html">CV</a></li>
+          </ul>
+        </li>
+
+        <li><a class="nav__link" href="travel.html">Travel</a></li>
+        <li><a class="nav__link" href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="hero" style="padding-bottom:0;">
+  <div class="wrap">
+    <h1>Curriculum <span class="grad">Vitae</span></h1>
+    <p class="subtitle">Updated October 2026. One page, available in English and Italian.</p>
+    <div class="menu" style="flex-wrap:wrap;">
+      <div class="tabs__bar" role="tablist" style="margin:0;">
+        <button class="tabs__btn" type="button" aria-selected="true" data-cv="assets/Martina_Castellucci_CV.pdf">English</button>
+        <button class="tabs__btn" type="button" aria-selected="false" data-cv="assets/Martina_Castellucci_CV_IT.pdf">Italiano</button>
+      </div>
+      <a class="btn btn--primary" id="cvDownload" href="assets/Martina_Castellucci_CV.pdf" download>Download PDF</a>
+    </div>
+  </div>
+</main>
+
+<section class="section">
+  <div class="wrap">
+    <div class="card">
+      <iframe id="cvFrame" title="CV preview" src="assets/Martina_Castellucci_CV.pdf"
+        style="width:100%;height:880px;border:1px solid var(--border);border-radius:14px;background:white;"></iframe>
+      <p class="muted" style="margin-top:10px; font-size:13px;">On a phone the preview may not load: use Download PDF.</p>
+    </div>
+    <footer>© 2026 Martina Castellucci · <a href="privacy.html">Privacy Policy</a></footer>
+  </div>
+</section>
+
+<script>
+document.querySelectorAll('[data-cv]').forEach(function (btn) {
+  btn.addEventListener('click', function () {
+    document.querySelectorAll('[data-cv]').forEach(function (b) { b.setAttribute('aria-selected', b === btn ? 'true' : 'false'); });
+    document.getElementById('cvFrame').src = btn.dataset.cv;
+    document.getElementById('cvDownload').href = btn.dataset.cv;
+  });
+});
+</script>
+
+</body>
+</html>
